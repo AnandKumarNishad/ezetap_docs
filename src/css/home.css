@@ -1,0 +1,260 @@
+.sidebar {
+    display: flex;
+}
+
+.mainArea {
+    width: 100%;
+}
+
+.titleDiv {
+    width: 96%;
+    height: 252px;
+    display: block;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    margin-left: 72px;
+}
+
+.bgImageDiv {
+    overflow: hidden;
+    display: block;
+    background-image: url('../../public/images/topBannerBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.heading {
+    color: #2D2D2D;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    padding: 48px 163px;
+    gap: 24px 0px;
+}
+
+.heading h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: initial;
+    font-weight: 700;
+}
+
+.searchbar {
+    background: rgb(255, 255, 255);
+    margin: 0;
+    outline: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    width: 450px;
+    box-sizing: border-box;
+    box-shadow: none;
+    position: relative;
+    padding: 0;
+    z-index: 2;
+    top: 8px;
+    max-width: 450px;
+    border-radius: 4px;
+    border: 1px solid rgb(197, 204, 216);
+}
+
+.scrolledSearchbar {
+    position: fixed;
+    background: #2D2D2D;
+    margin: 0;
+    outline: none;
+    display: flex;
+    justify-content: flex-start;
+    /* flex-flow: column nowrap; */
+    width: 450px;
+    box-sizing: border-box;
+    box-shadow: none;
+    padding: 0;
+    z-index: 2;
+    top: 8px;
+    max-width: 450px;
+    border-radius: 4px;
+    /* border: 1px solid rgb(197, 204, 216); */
+}
+
+.searchbar input {
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    padding: 12px 48px;
+    margin: 0;
+    outline: none;
+    position: relative;
+    z-index: 4;
+}
+
+.scrolledInputField {
+    border: 1px solid grey;
+    border-radius: 4px;
+    width: 355px;
+    background-color: white;
+    padding: 12px 48px;
+    margin: 0;
+    outline: none;
+    position: fixed;
+    z-index: 999;
+}
+
+.searchbar input:disabled {
+    color: rgb(84, 84, 84);
+}
+
+.ScrolledSearchIcon{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    overflow: hidden;
+    top: 10px;
+    left: 16px;
+    z-index: 999;
+}
+
+.scrolledInfoIcon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    overflow: hidden;
+    top: 10px;
+    right: 16px;
+    z-index: 999;
+
+}
+
+.searchbar img {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.searchIcon {
+    top: 10px;
+    left: 16px;
+}
+
+.infoIcon {
+    top: 10px;
+    right: 16px;
+}
+
+.bottomTitleText {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.bottomTitleText a {
+    display: flex;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottomTitleText p {
+    color: #2D2D2D;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    cursor: pointer;
+}
+
+.secondaryNavBar {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    top: 64px;
+    /* border-top: 2px solid grey; */
+    border-bottom: 1px solid rgb(215, 214, 214);
+}
+
+.secondaryInnerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 auto;
+}
+
+.tabDiv {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabDiv a {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.tabDiv p {
+    padding: 16px 32px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;    display: block;
+    cursor: pointer;
+    color: #2D2D2D;
+}
+
+.horizontalRule {
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: rgb(21 45 66675 / 20%) 0px 1px;
+    margin-top: -2px;
+    box-sizing: border-box;
+    display: block;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;  
+}

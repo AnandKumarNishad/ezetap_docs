@@ -1,0 +1,195 @@
+.bankingBgDiv {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url('../../public/images/bankingsectionBanner.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.bankingMainDiv {
+    margin: auto;
+    padding-bottom: 420;
+    max-width: 1080px;
+    box-sizing: border-box;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    flex: 0 1 auto;
+}
+
+.FirstDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0px;
+    box-sizing: border-box;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 auto;
+}
+
+.firstDivImage {
+    padding-top: 0;
+    box-sizing: border-box;
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 40px 0px 0px;
+    flex: 0 1 auto;
+    max-width: 500px;
+    max-height: 505px;
+}
+
+.bankingArticle {
+    box-sizing: border-box;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 40px 0px 0px;
+    flex: 0 1 auto;
+    max-width: 420px;
+}
+
+.bankingArticle h4 {
+    margin: 0;
+    font-size: 28px;
+    color: #2D2D2D;  
+    padding: 0px 0px 16px;
+    line-height: 42px;
+    text-align: initial;
+    font-weight: 700;  
+}
+
+.hr {
+    width: 24px;
+    border-width: 2px;
+    border-color: #2D2D2D;
+    border-style: solid;
+    background-color: #2D2D2D;
+    margin: 0;
+}
+
+.bankingArticle p {
+    color: #2D2D2D;
+    text-align: initial;
+    margin: 0;
+    padding: 16px 0px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.explorebtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.explorebtn a{
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.explorebtn button {
+    background-color: #2D2D2D;
+    box-shadow: none;
+    display: inline;
+    cursor: pointer;
+    border: 1px solid #2D2D2D;
+    padding: 12px 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.explorebtn p {
+    padding: 0;
+    color: white;
+}
+
+.quickLinks {
+    box-sizing: border-box;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0px;
+    padding: 40px 0px 0px;
+    flex: 0 1 auto;
+}
+
+.qltag {
+    color: #2D2D2D;
+    margin: 0;
+    padding: 0px 0px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.quicklinksList {
+    display: flex;
+    row-gap: 16px;
+    justify-content: flex-start;
+    gap: 24px 0px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    display: flex;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    flex: 0 1 auto;
+}
+
+.quicklinktitleandimg {
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    flex-wrap: nowrap;
+    width: 208px;
+    box-sizing: border-box;
+    display: flex;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    flex: 0 1 auto;
+}
+
+.quicklinktitleandimg img {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.quicklinktitleandimg a {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.quicklinktitleandimg a p {
+    color: #2D2D2D;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px 0px 0px 8px;
+    font-weight: 400;
+    cursor: pointer;
+}
