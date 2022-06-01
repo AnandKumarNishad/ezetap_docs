@@ -1,108 +1,85 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import '../css/splitnavbarStarted.css'
 
+let pageName;
+let data;
+
 const SplitNavBarStarted = () => {
+
+    const [ webData, setWebData ] = useState(); 
+
+    const getData = async () => {
+        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
+        .catch((error) => {
+            console.log(error.message);
+        });
+        data = result.data;
+        if(data !== undefined)
+        {
+            setWebData(data);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    if(webData !== undefined) {
+        console.log(webData.splitNav[0].API.mainTab);
+    }
+
+    if (document.URL.includes("getStarted")) {
+        pageName = 'GS';
+    } else if (document.URL.includes("apiDetails")) {
+        pageName = 'API';
+    }
+
     return (
+        
         <div className = 'sideSplitNav'>
             <nav className = 'secondNav'>
                 <nav className = 'splitnav'>
-                    <div className='main'>
-                        <div className = 'innerMain'>
-                            <div className = 'navTab'>
-                                <a>
-                                    <span>Overview</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
+                    {
+                        webData
+                        ?
+                        <div className='main'>
+                            {
+                                pageName === "GS"
+                                ?
+                                <div className = 'innerMain'>
                                     <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Get Started</p>
+                                        <a>
+                                            <span>{ webData.splitNav[0].GS.mainTab }</span>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Dashboard</p>
+                                :
+                                <>
+                                    <div className = 'innerMain'>
+                                        <div className = 'navTab'>
+                                            <a>
+                                                <span>{ webData.splitNav[0].API.mainTab }</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Customers</p>
+                                    <div className = 'navCell'>
+                                        <div className = 'navInnerCell'>
+                                            <div className = 'navBtn'>
+                                                <div className = 'navTab'>
+                                                    <img src = { webData.splitNav[0].API.arrowImg }></img>
+                                                    <p>{ webData.splitNav[0].API.SecTab.first }</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </>
+                            }
                         </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Orders</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Payments</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Settlements</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Refunds</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className = 'navCell'>
-                            <div className = 'navInnerCell'>
-                                <div className = 'navBtn'>
-                                    <div className = 'navTab'>
-                                        <img src = '/images/doublearrow.svg'></img>
-                                        <p>Disputes</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        :
+                        null
+                    }
                 </nav>
             </nav>
         </div>

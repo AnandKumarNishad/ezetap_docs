@@ -55,9 +55,10 @@
     position: inherit;
     outline: none;
     cursor: pointer;
+    pointer-events: none;
 }
 
-.navHome {
+.navoption {
     display: flex;
     width: 72px;
     justify-content: center;
@@ -84,4 +85,5 @@
     text-align: center;
     line-height: 16px;
     cursor: pointer;
+    position: none;
 }

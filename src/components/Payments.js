@@ -1,6 +1,5 @@
 import React from 'react';
 import SideNavBar from './SideNavBar';
-import SplitNavBarStarted from './SplitNavBarStarted';
 import TopNavBar from './TopNavBar';
 
 const Payments = () => {

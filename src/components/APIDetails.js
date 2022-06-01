@@ -1,9 +1,8 @@
 import React from 'react';
-import '../css/splitnavbarStarted.css'
-import TopNavBar from './TopNavBar';
 import SideNavBar from './SideNavBar';
+import TopNavBar from './TopNavBar';
 
-const GetStarted = () => {
+const APIDetails = () => {
     return (
         <div>
             <TopNavBar />
@@ -13,7 +12,7 @@ const GetStarted = () => {
                         <SideNavBar />
                     </div>
                     <main style={{ marginTop: "20px" }}>
-                        getStarted
+                        API
                     </main>
                 </div>
             </div>
@@ -21,4 +20,4 @@ const GetStarted = () => {
     );
 };
 
-export default GetStarted;
+export default APIDetails;

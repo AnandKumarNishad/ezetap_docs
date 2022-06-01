@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import SideNavBar from './SideNavBar';
 import TopNavBar from './TopNavBar';
 import '../css/home.css';
-import PaymentSection from './PaymentSection';
-import { padding } from '@mui/system';
 import HomeSideNav from './HomeSideNav';
-import BankingSection from './BankingSection';
+import CardsSection from './CardsSection';
+import axios from 'axios';
+import Loading from './Loading';
+
+let data
 
 const Home = () => {
-    const [ scroll, setScroll ] = useState(false);
-    useEffect( () => {
-        window.addEventListener("scroll", () => {
-            setScroll(window.scrollY > 110)
-        })
-    }, [])
+
+    const [ webData, setWebData ] = useState(); 
+
+    const getData = async () => {
+        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
+        .catch((error) => {
+            console.log(error.message);
+        });
+        data = result.data;
+        if(data !== undefined)
+        {
+            setWebData(data);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+    
     return (
         <div>
             <TopNavBar />
@@ -22,61 +36,38 @@ const Home = () => {
                     <HomeSideNav />
                     <main className = 'mainArea'>
                         <div className = 'titleDiv'>
-                            <div className = 'bgImageDiv'>
-                                <div className = 'heading'>
-                                    <h1>
-                                        Documentation
-                                    </h1>
+                            {
+                                webData
+                                ?
+                                <div className = 'bgImageDiv'>
+                                    <div className = 'heading'>
+                                        <h1>
+                                            { webData.headerArea[0].headerTitle }
+                                        </h1>
 
-                                    <div className = {scroll ? 'scrolledSearchbar' : 'searchbar'}>
-                                        <input placeholder='Search the documentation' disabled className = {scroll ? 'scrolledInputField' : 'inputField'}></input>
-                                        <img src = '/images/search-icon.svg' alt = 'search' className = {scroll ? 'ScrolledSearchIcon' : 'searchIcon'}></img>
-                                        <img src = '/images/info-icon.svg' alt = 'info' className = {scroll ? 'scrolledInfoIcon' : 'infoIcon'}></img>
+
+                                        <div className = 'bottomTitleText'>
+                                            <a>
+                                                <h3>{ webData.headerArea[0].headerText }</h3>
+                                            </a>
+                                        </div>
                                     </div>
-
-                                    <div className = 'bottomTitleText'>
-                                        <a>
-                                            <p> Not here for integration. Looking for refund? </p>
-                                            <img src = '/images/arrow.svg' alt = 'arrow'></img>
-                                        </a>
+                                    <div className = 'heroImg'>
+                                        <img src = { webData.headerArea[0].headerHeroImg } alt = { webData.headerArea[0].headerArrowIconAlt }></img>
                                     </div>
                                 </div>
-                            </div>
+                                :
+                                <Loading />
+                            }
                         </div>
 
-                        <div className = 'secondaryNavBar'>
-                            <div className = 'secondaryInnerDiv'>
-                                <div className = 'tabDiv'>
-                                    <a href = '#home-payment'>
-                                        <p>Payments</p>
-                                    </a>
-                                </div>
-
-                                <div className = 'tabDiv'>
-                                    <a href = '#home-banking'>
-                                        <p>Banking Plus</p>
-                                    </a>
-                                </div>
-
-                                <div  className = 'tabDiv'>
-                                    <a href = '#home-partners'>
-                                        <p>Partners</p>
-                                    </a>
-                                </div>
-
-                                <div className = 'tabDiv'>
-                                    <a href = '#home-devtools'>
-                                        <p>Developer Tools</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <CardsSection />
                         
-                        <PaymentSection />
+                        {/* <PaymentSection />
 
-                        <BankingSection />
+                        <BankingSection /> */}
 
-                        <section id = 'home-partners' style = {{ height:"100vh", paddingTop:"200px" }}>
+                        {/* <section id = 'home-partners' style = {{ height:"100vh", paddingTop:"200px" }}>
                             <div>
                                 partners
                             </div>
@@ -86,7 +77,7 @@ const Home = () => {
                             <div>
                                 devtools
                             </div>
-                        </section>
+                        </section> */}
                     </main>
                 </div>
             </div>

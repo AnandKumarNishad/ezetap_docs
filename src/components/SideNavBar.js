@@ -1,124 +1,72 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../css/sideNavBar.css'
 import SplitNavBarStarted from './SplitNavBarStarted';
+// import GetStatedSplitNav from './GetStatedSplitNav'; 
 
+let data;
 const SideNavBar = () => {
-    const [ isActive, setActive ] = useState(false);
+
+    const [ webData, setWebData ] = useState(); 
+
+    const getData = async () => {
+        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
+        .catch((error) => {
+            console.log(error.mapiDetailsessage);
+        });
+        data = result.data;
+        if(data !== undefined)
+        {
+            setWebData(data);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     const navigate = useNavigate();
 
-    const toggleClass = () => {
-        setActive(!isActive);
+    const gotoNavi = (e) => {
+        const tab = e.target.id;
+        if(tab === "Home") {
+            navigate("/");
+        } else if(tab === "GetStarted") {
+            navigate("/getStarted");
+        } else if(tab === "API") {
+            navigate("/apiDetails");
+        }
     }
 
-    const gotoHome = () => {
-        toggleClass();
-        navigate("/");
-    }
-
-    const gotoGetStarted = () => {
-        navigate("/getStarted");
-    }
-
-    const gotoPayments = () => {
-        navigate("/payments");
-    }
-
-    const gotoBanking = () => {
-        navigate("/");
-    }
-
-    const gotoPartners = () => {
-        navigate("/");
-    }
-
-    const gotoDevTools = () => {
-        navigate("/");
-    }
+    let splitNavBar = <></>;
 
     return (
+        webData 
+        ?
         <div className = 'sideNavBarMainDiv'>
             <nav className = 'sideNavBar'>
-                <div className = 'mainNavBtn'>
-                    <div className = { isActive ? 'navBtn' : 'navBtnActive'}>
-                        <a onClick={gotoHome}>
-                            <span className = 'navHome'>
-                                <img src = "/images/home.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Home
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className = 'mainNavBtn'>
-                    <div className = 'navBtn'>
-                        <a onClick={gotoGetStarted}>
-                            <span className = 'navHome'>
-                                <img src = "/images/getStarted.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Get Started
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className = 'mainNavBtn'>
-                    <div className = 'navBtn'>
-                        <a onClick={gotoPayments}>
-                            <span className = 'navHome'>
-                                <img src = "/images/payments.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Payments
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className = 'mainNavBtn'>
-                    <div className = 'navBtn'>
-                        <a onClick={gotoBanking}>
-                            <span className = 'navHome'>
-                                <img src = "/images/banking.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Banking Plus
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className = 'mainNavBtn'>
-                    <div className = 'navBtn'>
-                        <a onClick={gotoPartners}>
-                            <span className = 'navHome'>
-                                <img src = "/images/partners.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Partners
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className = 'mainNavBtn'>
-                    <div className = 'navBtn'>
-                        <a onClick={gotoDevTools}>
-                            <span className = 'navHome'>
-                                <img src = "/images/DeveloperTools.svg"></img>
-                            </span>
-                            <span className = 'navText'>
-                                Developer Tools
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                {
+                    webData.sideNavbar.map(element => (
+                        <div className = 'mainNavBtn' key = { element.type }>
+                            <div className = 'navBtn'  onClick = { gotoNavi } id = {element.type} >
+                                <a>
+                                    <span className = 'navoption'>
+                                        <img src = { element.icon } alt ={ element.iconAlt } ></img>
+                                    </span>
+                                    <span className = 'navText'>
+                                        { element.text }
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    ))
+                }
             </nav>
-            <SplitNavBarStarted/>
+            <SplitNavBarStarted />
         </div>
+        :
+        null
     );
 };
 
