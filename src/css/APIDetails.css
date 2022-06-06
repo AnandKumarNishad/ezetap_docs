@@ -1,0 +1,40 @@
+.pushToPay {
+    text-align: left;
+    margin: 0px 100px;
+}
+
+.dataGrid {
+    width: 100%;
+    display: flex;
+    /* margin: 0px 100px; */
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #E77A2B;
+}
+    
+table {
+    border-collapse: collapse;
+    height: 1000px;
+    padding: 0;
+    margin: 0;
+}
+
+tr {
+    padding: 0;
+    margin: 0;
+}
+    
+th {
+    text-align: left;
+    padding-left: 15px;
+    border: 1px solid #E77A2B;
+    border-bottom: 2px solid #E77A2B;
+    margin: 0;
+}
+    
+td {
+    text-align: left;
+    padding-left: 15px;
+    border: .5px solid grey;
+    margin: 0;
+}

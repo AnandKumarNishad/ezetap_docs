@@ -49,7 +49,7 @@ const SideNavBar = () => {
                 {
                     webData.sideNavbar.map(element => (
                         <div className = 'mainNavBtn' key = { element.type }>
-                            <div className = 'navBtn'  onClick = { gotoNavi } id = {element.type} >
+                            <div className = 'navBtns'  onClick = { gotoNavi } id = {element.type} >
                                 <a>
                                     <span className = 'navoption'>
                                         <img src = { element.icon } alt ={ element.iconAlt } ></img>

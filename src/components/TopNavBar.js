@@ -31,7 +31,7 @@ const TopNavBar = () => {
                 <div className = 'mainDiv'>
                     <div className = 'logoDiv'>
                         <div className = 'logoMainDiv'>
-                            <a>
+                            <a href = '/'>
                                 <div className = 'innerLogoDiv'>
                                     <img src = { webData.topNavbar[0].logoURL } alt = { webData.topNavbar[0].logoURLAlt } width = '130px' height = '55px'/>
                                 </div>

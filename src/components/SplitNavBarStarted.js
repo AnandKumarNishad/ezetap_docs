@@ -25,10 +25,6 @@ const SplitNavBarStarted = () => {
         getData();
     }, []);
 
-    if(webData !== undefined) {
-        console.log(webData.splitNav[0].API.mainTab);
-    }
-
     if (document.URL.includes("getStarted")) {
         pageName = 'GS';
     } else if (document.URL.includes("apiDetails")) {
