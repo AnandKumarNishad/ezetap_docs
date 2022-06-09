@@ -4,13 +4,16 @@ import TopNavBar from './TopNavBar';
 import '../css/APIDetails.css'
 import axios from 'axios';
 import Loading from "../components/Loading";
+import Markdown from 'react-markdown';
 
 let data;
+let aData;
 let wData;
 
 const APIDetails = () => {
 
     const [ webData, setWebData ] = useState(); 
+    const [ apiData, setApiData ] = useState(); 
     const [ paramsData, setParamsData ] = useState(); 
 
     const getParamsData = async () => {
@@ -25,6 +28,17 @@ const APIDetails = () => {
         }
     }
 
+    const getApiData = async () => {
+        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/md")
+        .catch((error) => {
+            console.log(error.message);
+        });
+        aData = result.data;
+        if(aData !== undefined)
+        {
+            setApiData(aData);
+        }
+    }
 
     const getData = async () => {
         const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
@@ -40,6 +54,7 @@ const APIDetails = () => {
 
     useEffect(() => {
         getData();
+        getApiData();
         getParamsData();
     }, []);
 
@@ -53,51 +68,13 @@ const APIDetails = () => {
                     </div>
                     <main style={{ marginTop: "20px" }}>
                         <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
-                            
+                            <Markdown children = { apiData } />
                             {
                                 webData
                                 ?
                                 <div className = 'titleTop'>
-                                    <h2> { webData.APIDetails.title } </h2>
-                                    <p>
-                                        { webData.APIDetails.titleText }
-                                        <span>
-                                            <ol>
-                                                {
-                                                    webData.APIDetails.APITypes.map(listitems => (
-                                                        <li>{listitems.li}</li>
-                                                    ))
-                                                }
-                                            </ol>
-                                        </span>
-                                        
-                                        { webData.APIDetails.note }
-                                        {<br/>}
-                                        { webData.APIDetails.preprep }
-
-                                        <span>
-                                            <ol>
-                                                { 
-                                                    webData.APIDetails.preprepSteps.map(listitems => (
-                                                        <li>{ listitems.li }</li>
-                                                    )) 
-                                                }
-                                            </ol>
-                                        </span>
-                                        { webData.APIDetails.testText }
-                                    </p>
                                     <div>
-                                        <h3>{ webData.APIDetails.type1.heading }</h3>
-                                        <p>{ webData.APIDetails.type1.type1Text }</p>
-                                        <h4>{ webData.APIDetails.type1.innerTitle }</h4>
-                                        <ul>
-                                            {
-                                                webData.APIDetails.type1.innerURLs.map(listitems => (
-                                                    <li>{ listitems.li }</li>
-                                                ))
-                                            }
-                                        </ul>
-                                        <h4>{ webData.APIDetails.type1.tableTitle }</h4>
+                                        <h4>{ webData.tableTitle }</h4>
                                         <div className = 'dataGrid' style = {{ width: "100%" }}>
                                             <table>
                                                 <tr>

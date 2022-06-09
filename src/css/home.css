@@ -157,3 +157,15 @@
     margin: 0;
     padding: 0;  
 }
+
+.Home,
+.GetStarted {
+    width: 20px;
+    height: 20px;
+}
+
+.Features,
+.API {
+    width: 30px;
+    height: 30px;
+}

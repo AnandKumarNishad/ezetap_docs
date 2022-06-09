@@ -3,7 +3,6 @@
     flex-direction: column;
     position: sticky;
     z-index: 1000;
-    /* padding-top: 3px; */
 }
 
 .sideNavBar {
@@ -65,6 +64,19 @@
     margin: 0;
     padding: 4px;
     cursor: pointer;
+}
+
+
+.Home,
+.GetStarted {
+    width: 20px;
+    height: 20px;
+}
+
+.Features,
+.API {
+    width: 30px;
+    height: 30px;
 }
 
 .navText {

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import GetStarted from './components/GetStarted';
 import Payments from './components/Payments';
 import APIDetails from './components/APIDetails';
+import Features from './components/Features';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Routes>
               <Route exact path = '/' element = { <Home /> } />
               <Route exact path = '/getStarted' element = { <GetStarted /> } />
+              <Route exact path = '/features' element = { <Features /> } />
               <Route exact path = '/apiDetails' element = { <APIDetails /> } />
             </Routes>
           </Router>

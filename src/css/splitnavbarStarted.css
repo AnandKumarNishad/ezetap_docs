@@ -16,7 +16,8 @@
 }
 
 .navTab {
-    margin-left: 20px;
+    height: 30px;
+    /* margin-left: 20px; */
     display: flex;
 }
 
@@ -25,19 +26,22 @@
 }
 
 .navTab p {
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    text-align: center;
     margin: 0;
-    margin-left: 5px;
-    padding: 0;
+    padding: 7px;
 }
 
 .navBtn {
     position: sticky;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    height: 72px;
+    height:90vh;
     box-sizing: border-box;
     background-color: transparent;
     margin: 0;
@@ -57,4 +61,8 @@
     outline: none;
     cursor: pointer;
     pointer-events: none;
+}
+
+.innerMain {
+    margin: 5px 20px 0 20px;
 }

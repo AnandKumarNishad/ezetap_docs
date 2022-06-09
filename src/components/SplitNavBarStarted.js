@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../css/splitnavbarStarted.css'
 
-let pageName;
+let pageName = "";
 let data;
 
 const SplitNavBarStarted = () => {
@@ -27,12 +27,13 @@ const SplitNavBarStarted = () => {
 
     if (document.URL.includes("getStarted")) {
         pageName = 'GS';
+    } else if (document.URL.includes("features")) {
+        pageName = 'FEATURES';
     } else if (document.URL.includes("apiDetails")) {
         pageName = 'API';
     }
 
     return (
-        
         <div className = 'sideSplitNav'>
             <nav className = 'secondNav'>
                 <nav className = 'splitnav'>
@@ -51,6 +52,11 @@ const SplitNavBarStarted = () => {
                                     </div>
                                 </div>
                                 :
+                                null
+                            }
+                            {   
+                                pageName === 'API'
+                                ?
                                 <>
                                     <div className = 'innerMain'>
                                         <div className = 'navTab'>
@@ -71,6 +77,34 @@ const SplitNavBarStarted = () => {
                                         </div>
                                     </div>
                                 </>
+                                :
+                                null
+                            }
+                            {
+                                pageName === 'FEATURES'
+                                ?
+                                <>
+                                    <div className = 'innerMain'>
+                                        <div className = 'navTab'>
+                                            <a>
+                                                <span>{ webData.splitNav[0].FEATURES.mainTab }</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div className = 'navCell'>
+                                        <div className = 'navInnerCell'>
+                                            <div className = 'navBtn'>
+                                                <div className = 'navTab'>
+                                                    <img src = { webData.splitNav[0].FEATURES.arrowImg }></img>
+                                                    <p>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                                :
+                                null
                             }
                         </div>
                         :

@@ -34,6 +34,8 @@ const HomeSideNav = () => {
             navigate("/");
         } else if(tab === "GetStarted") {
             navigate("/getStarted");
+        } else if(tab === "Features") {
+            navigate("/features");
         } else if(tab === "API") {
             navigate("/apiDetails");
         }
@@ -50,7 +52,7 @@ const HomeSideNav = () => {
                             <div className = 'navBtns'  onClick = { gotoNavi } id = {element.type} >
                                 <a>
                                     <span className = 'navoption'>
-                                        <img src = { element.icon } alt ={ element.iconAlt } ></img>
+                                        <img className = { element.iconAlt } src = { element.icon } alt ={ element.iconAlt } ></img>
                                     </span>
                                     <span className = 'navText'>
                                         { element.text }
