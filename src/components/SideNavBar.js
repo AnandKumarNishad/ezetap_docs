@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../css/sideNavBar.css'
 import SplitNavBarStarted from './SplitNavBarStarted';
-// import GetStatedSplitNav from './GetStatedSplitNav'; 
 
 let data;
 const SideNavBar = () => {
@@ -41,7 +40,28 @@ const SideNavBar = () => {
         }
     }
 
-    let splitNavBar = <></>;
+    const activetab = () => {
+        let GetStarted = document.querySelector('#GetStarted');
+        let Features = document.querySelector('#Features');
+        let API = document.querySelector('#API');
+
+        // console.log(GetStarted);
+        // console.log(Features);
+        // console.log(API);
+
+        if(GetStarted !== null && Features !== null && API !== null )
+        {
+            if( document.URL.includes("getStarted") ) {
+                GetStarted.classList.add("active");
+            }
+            if( document.URL.includes("features") ) {
+                Features.classList.add("active");
+            } 
+            if( document.URL.includes("apiDetails") ) {
+                API.classList.add("active");
+            }
+        }
+    }
 
     return (
         webData 
@@ -52,6 +72,7 @@ const SideNavBar = () => {
                     webData.sideNavbar.map(element => (
                         <div className = 'mainNavBtn' key = { element.type }>
                             <div className = 'navBtns'  onClick = { gotoNavi } id = {element.type} >
+                                { activetab() }
                                 <a>
                                     <span className = 'navoption'>
                                         <img className = { element.iconAlt } src = { element.icon } alt ={ element.iconAlt } ></img>

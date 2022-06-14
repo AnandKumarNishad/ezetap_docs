@@ -77,21 +77,25 @@ const APIDetails = () => {
                                         <h4>{ webData.tableTitle }</h4>
                                         <div className = 'dataGrid' style = {{ width: "100%" }}>
                                             <table>
-                                                <tr>
-                                                    <th style = {{ width: "220px" }}>Parameter</th>
-                                                    <th style = {{ width: "300px" }}>Datatype</th>
-                                                    <th>Description</th>
-                                                </tr>
+                                                <thead>
+                                                    <tr key = "heading">
+                                                        <th style = {{ width: "220px" }}>Parameter</th>
+                                                        <th style = {{ width: "300px" }}>Datatype</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
                                                 {
                                                     paramsData
                                                     ?
                                                     paramsData.params.map(val => {
                                                         return (
-                                                            <tr>
-                                                                <td>{ val.Parameter }</td>
-                                                                <td>{ val.Datatype }</td>
-                                                                <td>{ val.Description }</td>
-                                                            </tr>
+                                                            <tbody key = { val.Parameter }>
+                                                                <tr>
+                                                                    <td>{ val.Parameter }</td>
+                                                                    <td>{ val.Datatype }</td>
+                                                                    <td>{ val.Description }</td>
+                                                                </tr>
+                                                            </tbody>
                                                         )
                                                     })
                                                     :

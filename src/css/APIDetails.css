@@ -9,12 +9,11 @@
     /* margin: 0px 100px; */
     justify-content: center;
     align-items: center;
-    border: 2px solid #E77A2B;
+    /* border: 2px solid #E77A2B; */
 }
     
 table {
     border-collapse: collapse;
-    height: 1000px;
     padding: 0;
     margin: 0;
 }

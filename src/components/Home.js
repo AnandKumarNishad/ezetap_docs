@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import TopNavBar from './TopNavBar';
 import '../css/home.css';
-import HomeSideNav from './HomeSideNav';
 import CardsSection from './CardsSection';
 import axios from 'axios';
 import Loading from './Loading';
+import SideNavBar from './SideNavBar';
 
 let data
 
@@ -33,7 +33,7 @@ const Home = () => {
             <TopNavBar />
             <div className = 'homeMainDiv'>
                 <div className = 'sidebar'>
-                    <HomeSideNav />
+                    <SideNavBar />
                     <main className = 'mainArea'>
                         <div className = 'titleDiv'>
                             {

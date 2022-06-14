@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import '../css/splitnavbarStarted.css'
+import '../css/splitnavbarStarted.css';
 
 let pageName = "";
 let data;
@@ -26,14 +26,20 @@ const SplitNavBarStarted = () => {
     }, []);
 
     if (document.URL.includes("getStarted")) {
-        pageName = 'GS';
+        pageName = 'gs';
     } else if (document.URL.includes("features")) {
-        pageName = 'FEATURES';
+        pageName = 'features';
     } else if (document.URL.includes("apiDetails")) {
-        pageName = 'API';
+        pageName = 'api';
+    } else {
+        pageName = 'home'
     }
 
     return (
+        pageName === "home"
+        ?
+        null
+        :
         <div className = 'sideSplitNav'>
             <nav className = 'secondNav'>
                 <nav className = 'splitnav'>
@@ -42,7 +48,7 @@ const SplitNavBarStarted = () => {
                         ?
                         <div className='main'>
                             {
-                                pageName === "GS"
+                                pageName === "gs"
                                 ?
                                 <div className = 'innerMain'>
                                     <div className = 'navTab'>
@@ -55,7 +61,7 @@ const SplitNavBarStarted = () => {
                                 null
                             }
                             {   
-                                pageName === 'API'
+                                pageName === 'api'
                                 ?
                                 <>
                                     <div className = 'innerMain'>
@@ -81,7 +87,7 @@ const SplitNavBarStarted = () => {
                                 null
                             }
                             {
-                                pageName === 'FEATURES'
+                                pageName === 'features'
                                 ?
                                 <>
                                     <div className = 'innerMain'>
@@ -98,6 +104,17 @@ const SplitNavBarStarted = () => {
                                                 <div className = 'navTab'>
                                                     <img src = { webData.splitNav[0].FEATURES.arrowImg }></img>
                                                     <p>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
+                                                </div>
+                                                <div className = 'apiNames'>
+                                                    <ul>
+                                                        {
+                                                            webData.splitNav[0].FEATURES.secTabList.map(li => (
+                                                                <a key = { li.li } >
+                                                                    <li> { li.li } </li>
+                                                                </a>
+                                                            ))
+                                                        }
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

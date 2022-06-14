@@ -3,7 +3,12 @@ import React, { useEffect, useState } from 'react';
 import SideNavBar from './SideNavBar';
 import TopNavBar from './TopNavBar';
 import Markdown from 'react-markdown';
+import reactMarkdown from 'react-markdown';
 import Loading from './Loading';
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from "rehype-raw";
+import '../css/features.css';
+import ReactMarkdown from 'react-markdown';
 
 let data;
 
@@ -42,7 +47,7 @@ const Features = () => {
                             </div>
                             <main style={{ textAlign: "left" }}>
                                 <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
-                                    <Markdown children = { webData } />
+                                    <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } components = {{ td: ({node, ...props}) => <td style = {{textAlign: 'left'}} {...props} /> }}/>
                                 </section>
                             </main>
                         </div>
