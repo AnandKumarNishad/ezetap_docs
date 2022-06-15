@@ -17,8 +17,12 @@
 
 .navTab {
     height: 30px;
-    /* margin-left: 20px; */
     display: flex;
+}
+
+.navTab a img {
+    width: 12px;
+    height: 30px;
 }
 
 .navTab a {
@@ -55,25 +59,30 @@
 
 .navBtn a {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     text-decoration: none;
     position: inherit;
     outline: none;
     cursor: pointer;
-    pointer-events: none;
+    color: #2D2D2D;
+    font-weight: 500;
 }
 
 .innerMain {
     margin: 5px 20px 0 20px;
 }
 
-ul {
+.apiNames ul {
     list-style: none;
     padding: 0;
     text-align: left;
 }
 
-li {
+.apiNames ul li {
     padding: 5px 0px 5px 15px;
+    cursor: pointer;
+}
+
+.apiNames {
     cursor: pointer;
 }

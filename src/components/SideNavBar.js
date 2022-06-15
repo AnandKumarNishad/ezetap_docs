@@ -29,36 +29,44 @@ const SideNavBar = () => {
 
     const gotoNavi = (e) => {
         const tab = e.target.id;
-        if(tab === "Home") {
+        if(tab === "home") {
             navigate("/");
-        } else if(tab === "GetStarted") {
+        } else if(tab === "getStarted") {
             navigate("/getStarted");
-        } else if(tab === "Features") {
+        } else if(tab === "features") {
             navigate("/features");
-        } else if(tab === "API") {
+        } else if(tab === "api") {
             navigate("/apiDetails");
         }
     }
 
     const activetab = () => {
-        let GetStarted = document.querySelector('#GetStarted');
-        let Features = document.querySelector('#Features');
-        let API = document.querySelector('#API');
+        let home = document.querySelector('#home');
+        let getStarted = document.querySelector('#getStarted');
+        let features = document.querySelector('#features');
+        let api = document.querySelector('#api');
 
-        // console.log(GetStarted);
-        // console.log(Features);
-        // console.log(API);
+        // console.log(getStarted);
+        // console.log(features);
+        // console.log(api);
 
-        if(GetStarted !== null && Features !== null && API !== null )
+        if(home !== null ){
+            home.classList.add("active");
+        }
+
+        if(getStarted !== null && features !== null && api !== null )
         {
             if( document.URL.includes("getStarted") ) {
-                GetStarted.classList.add("active");
+                getStarted.classList.add("active");
+                home.classList.remove("active");
             }
             if( document.URL.includes("features") ) {
-                Features.classList.add("active");
+                features.classList.add("active");
+                home.classList.remove("active");
             } 
             if( document.URL.includes("apiDetails") ) {
-                API.classList.add("active");
+                api.classList.add("active");
+                home.classList.remove("active");
             }
         }
     }

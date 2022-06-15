@@ -2,15 +2,19 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import SideNavBar from './SideNavBar';
 import TopNavBar from './TopNavBar';
-import Markdown from 'react-markdown';
-import reactMarkdown from 'react-markdown';
+// import Markdown from 'react-markdown';
+// import reactMarkdown from 'react-markdown';
 import Loading from './Loading';
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
 import '../css/features.css';
 import ReactMarkdown from 'react-markdown';
+import StartApi from './StartApi';
+import StatusApi from './StatusApi';
+import CancelApi from './CancelApi';
 
 let data;
+let pageName;
 
 const Features = () => {
 
@@ -32,6 +36,15 @@ const Features = () => {
         getData();
     }, []);
 
+    if (document.URL.includes("features")) {
+        pageName = 'main';
+    } else if (document.URL.includes("startApi")) {
+        pageName = 'startapi';
+    } else if (document.URL.includes("statusApi")) {
+        pageName = 'statusapi';
+    } else if (document.URL.includes("cancelApi")) {
+        pageName = 'cancelapi';
+    }
 
     return (
         <>
@@ -46,9 +59,42 @@ const Features = () => {
                                 <SideNavBar />
                             </div>
                             <main style={{ textAlign: "left" }}>
-                                <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
-                                    <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } components = {{ td: ({node, ...props}) => <td style = {{textAlign: 'left'}} {...props} /> }}/>
-                                </section>
+                                {
+                                    pageName === 'main'
+                                    ?
+                                    <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
+                                        <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } components = {{ td: ({node, ...props}) => <td style = {{textAlign: 'left'}} {...props} /> }}/>
+                                    </section>
+                                    :
+                                    null
+                                }
+                                {
+                                    pageName === 'startapi'
+                                    ?
+                                    <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 350px" }}>
+                                        <StartApi />
+                                    </section>
+                                    :
+                                    null
+                                }
+                                {
+                                    pageName === 'statusapi'
+                                    ?
+                                    <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 350px" }}>
+                                       <StatusApi />
+                                    </section>
+                                    :
+                                    null
+                                }
+                                {
+                                    pageName === 'cancelapi'
+                                    ?
+                                    <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 350px" }}>
+                                        <CancelApi />
+                                    </section>
+                                    :
+                                    null
+                                }
                             </main>
                         </div>
                     </div>

@@ -76,7 +76,7 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    <img src = { webData.splitNav[0].API.arrowImg }></img>
+                                                    <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
                                                     <p>{ webData.splitNav[0].API.SecTab.first }</p>
                                                 </div>
                                             </div>
@@ -102,14 +102,16 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    <img src = { webData.splitNav[0].FEATURES.arrowImg }></img>
-                                                    <p>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
+                                                    <a href = { webData.splitNav[0].FEATURES.SecTab.route }>
+                                                        <img src = { webData.splitNav[0].FEATURES.arrowImg } alt = { webData.splitNav[0].FEATURES.arrImgAlt }></img>
+                                                        <p>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
+                                                    </a>
                                                 </div>
                                                 <div className = 'apiNames'>
                                                     <ul>
                                                         {
                                                             webData.splitNav[0].FEATURES.secTabList.map(li => (
-                                                                <a key = { li.li } >
+                                                                <a href = { li.route } key = { li.li } >
                                                                     <li> { li.li } </li>
                                                                 </a>
                                                             ))

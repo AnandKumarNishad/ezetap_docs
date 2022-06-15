@@ -52,7 +52,7 @@ const CardsSection = () => {
                                             <h5>{ card.cardBack.backtext }</h5>
                                             <ul>
                                                 <li>
-                                                    <a href = '/apiDetails#pushToPay'>{ card.cardBack.listlink.title1 }</a>
+                                                    <a href = '/apiDetails'>{ card.cardBack.listlink.title1 }</a>
                                                 </li>
 
                                                 <li>

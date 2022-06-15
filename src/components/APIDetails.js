@@ -89,11 +89,11 @@ const APIDetails = () => {
                                                     ?
                                                     paramsData.params.map(val => {
                                                         return (
-                                                            <tbody key = { val.Parameter }>
+                                                            <tbody key = { val.parameter }>
                                                                 <tr>
-                                                                    <td>{ val.Parameter }</td>
-                                                                    <td>{ val.Datatype }</td>
-                                                                    <td>{ val.Description }</td>
+                                                                    <td>{ val.parameter }</td>
+                                                                    <td>{ val.datatype }</td>
+                                                                    <td>{ val.description }</td>
                                                                 </tr>
                                                             </tbody>
                                                         )
