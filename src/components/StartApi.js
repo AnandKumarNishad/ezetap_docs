@@ -35,21 +35,7 @@ const StartApi = () => {
             {
                 webData
                 ?
-                <div>
-                    <TopNavBar />
-                    <div>
-                        <div>
-                            <div>
-                                <SideNavBar />
-                            </div>
-                            <main style={{ textAlign: "left" }}>
-                                <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 350px" }}>
-                                    <ReactMarkdown rehypePlugins = {[rehypeRaw]} remarkPlugins = { [remarkGfm] } className = 'markdown' children = { webData } />
-                                </section>
-                            </main>
-                        </div>
-                    </div>
-                </div>
+                <ReactMarkdown rehypePlugins = {[rehypeRaw]} remarkPlugins = { [remarkGfm] } className = 'markdown' children = { webData } />
                 :
                 <Loading />
             }

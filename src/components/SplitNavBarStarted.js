@@ -35,6 +35,36 @@ const SplitNavBarStarted = () => {
         pageName = 'home'
     }
 
+    const activeLink = () => {
+        let ptp = document.querySelector("#ptp");
+        let startapi = document.querySelector("#start");
+        let statusapi = document.querySelector("#status");
+        let cancelapi = document.querySelector("#cancel");
+        console.log(ptp)
+        console.log(startapi)
+        console.log(statusapi)
+        console.log(cancelapi)
+        if(startapi !== null && statusapi !== null && cancelapi !== null)
+        {
+            if( document.URL.includes("startApi")) {
+                startapi.classList.add("activeapiname");
+                ptp.classList.remove("activeapiname");
+                ptp.classList.add("secactive");
+            }
+            if( document.URL.includes("statusApi")) {
+                statusapi.classList.add("activeapiname");
+                ptp.classList.remove("activeapiname");
+                ptp.classList.add("secactive");
+            }
+            if( document.URL.includes("cancelApi")) {
+                cancelapi.classList.add("activeapiname");
+                ptp.classList.remove("activeapiname");
+                ptp.classList.add("secactive");
+            }
+        }
+    }
+
+
     return (
         pageName === "home"
         ?
@@ -102,9 +132,9 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    <a href = { webData.splitNav[0].FEATURES.SecTab.route }>
+                                                    <a href = { webData.splitNav[0].FEATURES.SecTab.route } >
                                                         <img src = { webData.splitNav[0].FEATURES.arrowImg } alt = { webData.splitNav[0].FEATURES.arrImgAlt }></img>
-                                                        <p>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
+                                                        <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
                                                     </a>
                                                 </div>
                                                 <div className = 'apiNames'>
@@ -112,7 +142,7 @@ const SplitNavBarStarted = () => {
                                                         {
                                                             webData.splitNav[0].FEATURES.secTabList.map(li => (
                                                                 <a href = { li.route } key = { li.li } >
-                                                                    <li> { li.li } </li>
+                                                                    <li id = {li.id}> { li.li } </li>
                                                                 </a>
                                                             ))
                                                         }
@@ -121,6 +151,7 @@ const SplitNavBarStarted = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    { activeLink() }
                                 </>
                                 :
                                 null

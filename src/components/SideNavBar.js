@@ -46,10 +46,6 @@ const SideNavBar = () => {
         let features = document.querySelector('#features');
         let api = document.querySelector('#api');
 
-        // console.log(getStarted);
-        // console.log(features);
-        // console.log(api);
-
         if(home !== null ){
             home.classList.add("active");
         }
@@ -80,7 +76,6 @@ const SideNavBar = () => {
                     webData.sideNavbar.map(element => (
                         <div className = 'mainNavBtn' key = { element.type }>
                             <div className = 'navBtns'  onClick = { gotoNavi } id = {element.type} >
-                                { activetab() }
                                 <a>
                                     <span className = 'navoption'>
                                         <img className = { element.iconAlt } src = { element.icon } alt ={ element.iconAlt } ></img>
@@ -93,6 +88,7 @@ const SideNavBar = () => {
                         </div>
                     ))
                 }
+                { activetab() }
             </nav>
             <SplitNavBarStarted />
         </div>

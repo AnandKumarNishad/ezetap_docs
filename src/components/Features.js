@@ -9,11 +9,14 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
 import '../css/features.css';
 import ReactMarkdown from 'react-markdown';
-import StartApi from './StartApi';
-import StatusApi from './StatusApi';
-import CancelApi from './CancelApi';
+// import StartApi from './StartApi';
+// import StatusApi from './StatusApi';
+// import CancelApi from './CancelApi';
 
 let data;
+let startData;
+let statusData;
+let cancelData;
 let pageName;
 
 const Features = () => {
@@ -32,8 +35,24 @@ const Features = () => {
         }
     }
 
+
+    const [ startApiData, setStartApi ] = useState(); 
+
+    const getStartApiData = async () => {
+        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/startapi")
+        .catch((error) => {
+            console.log(error.message);
+        });
+        startData = result.data;
+        if(startData !== undefined)
+        {
+            setStartApi(startData);
+        }
+    }
+
     useEffect(() => {
         getData();
+        getStartApiData();
     }, []);
 
     if (document.URL.includes("features")) {
@@ -69,9 +88,10 @@ const Features = () => {
                                     null
                                 }
                                 {
-                                    pageName === 'startapi'
+                                    pageName === 'main'
                                     ?
                                     <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 350px" }}>
+                                        {/* <ReactMarkdown className = 'markdown' children = { startApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } components = {{ td: ({node, ...props}) => <td style = {{textAlign: 'left'}} {...props} /> }}/> */}
                                         <StartApi />
                                     </section>
                                     :

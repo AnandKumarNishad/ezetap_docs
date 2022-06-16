@@ -86,3 +86,11 @@
 .apiNames {
     cursor: pointer;
 }
+
+.activeapiname {
+    color: #E77A2B;
+}
+
+.secactive {
+    font-weight: 900;
+}
