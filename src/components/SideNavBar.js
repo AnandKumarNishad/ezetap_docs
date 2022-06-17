@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import '../css/sideNavBar.css'
 import SplitNavBarStarted from './SplitNavBarStarted';
 
-let data;
 const SideNavBar = () => {
-
+    const navigate = useNavigate();
     const [ webData, setWebData ] = useState(); 
+    
+    let data;
 
+    // getting the data from the api
     const getData = async () => {
         const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
         .catch((error) => {
@@ -17,6 +19,7 @@ const SideNavBar = () => {
         data = result.data;
         if(data !== undefined)
         {
+            // assigning it to webData in useState
             setWebData(data);
         }
     }
@@ -25,8 +28,7 @@ const SideNavBar = () => {
         getData();
     }, []);
 
-    const navigate = useNavigate();
-
+    // function for navigation from one page to another
     const gotoNavi = (e) => {
         const tab = e.target.id;
         if(tab === "home") {
@@ -40,6 +42,7 @@ const SideNavBar = () => {
         }
     }
 
+    // function to find the active tab using the URL and id of the nav button
     const activetab = () => {
         let home = document.querySelector('#home');
         let getStarted = document.querySelector('#getStarted');
@@ -50,6 +53,7 @@ const SideNavBar = () => {
             home.classList.add("active");
         }
 
+        // assigning the active css class to the active nav button
         if(getStarted !== null && features !== null && api !== null )
         {
             if( document.URL.includes("getStarted") ) {
@@ -68,6 +72,7 @@ const SideNavBar = () => {
     }
 
     return (
+        // rendering only if there is data in webData else loading screen is shown
         webData 
         ?
         <div className = 'sideNavBarMainDiv'>
@@ -88,8 +93,11 @@ const SideNavBar = () => {
                         </div>
                     ))
                 }
+                {/* calling the function to check active tab */}
                 { activetab() }
             </nav>
+
+            {/* rendering the split navbar */}
             <SplitNavBarStarted />
         </div>
         :

@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 import '../css/cards.css';
 import Loading from './Loading';
 
-let data;
 
 const CardsSection = () => {
-
     const [ webData, setWebData ] = useState(); 
+    
+    let data;
 
+    // getting the data from the api
     const getData = async () => {
         const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
         .catch((error) => {
@@ -17,6 +18,7 @@ const CardsSection = () => {
         data = result.data;
         if(data !== undefined)
         {
+            // assigning it to webData in useState
             setWebData(data);
         }
     }
@@ -28,6 +30,7 @@ const CardsSection = () => {
     return (
         <section className = 'container-fluid'>
             {
+            // rendering only if ther is data in webData
             webData
             ?
             <div className = 'container'>
@@ -42,6 +45,7 @@ const CardsSection = () => {
                             <div className = 'flip-wrapper'>
                                 <div className = 'flip-card'>
                                     <div className = 'flip-card-inner'>
+                                        {/* rendering two faces of cards */}
                                         <div className = 'flip-card-front'>
                                             <img src = { card.cardFront.sdkImg } alt = { card.cardFront.sdkImgAlt }></img>
                                             <h3>{ card.cardFront.title }</h3>

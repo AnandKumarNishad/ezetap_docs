@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/splitnavbarStarted.css';
 
-let pageName = "";
-let data;
-
 const SplitNavBarStarted = () => {
-
     const [ webData, setWebData ] = useState(); 
+    
+    let pageName = "";
+    let data;
 
+    // getting the data from the api
     const getData = async () => {
         const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
         .catch((error) => {
@@ -17,6 +18,7 @@ const SplitNavBarStarted = () => {
         data = result.data;
         if(data !== undefined)
         {
+            // assigning it to webData in useState
             setWebData(data);
         }
     }
@@ -25,6 +27,7 @@ const SplitNavBarStarted = () => {
         getData();
     }, []);
 
+    // checking on which page we are on
     if (document.URL.includes("getStarted")) {
         pageName = 'gs';
     } else if (document.URL.includes("features")) {
@@ -35,41 +38,50 @@ const SplitNavBarStarted = () => {
         pageName = 'home'
     }
 
+    // setting the active css class to the active link
     const activeLink = () => {
         let ptp = document.querySelector("#ptp");
         let startapi = document.querySelector("#start");
         let statusapi = document.querySelector("#status");
         let cancelapi = document.querySelector("#cancel");
-        console.log(ptp)
-        console.log(startapi)
-        console.log(statusapi)
-        console.log(cancelapi)
+
         if(startapi !== null && statusapi !== null && cancelapi !== null)
         {
             if( document.URL.includes("startApi")) {
                 startapi.classList.add("activeapiname");
                 ptp.classList.remove("activeapiname");
+                cancelapi.classList.remove("activeapiname");
+                statusapi.classList.remove("activeapiname");
                 ptp.classList.add("secactive");
-            }
-            if( document.URL.includes("statusApi")) {
+            } else if ( document.URL.includes("statusApi")) {
+                cancelapi.classList.remove("activeapiname");
+                startapi.classList.remove("activeapiname");
+                ptp.classList.remove("activeapiname");
+                ptp.classList.add("secactive");
                 statusapi.classList.add("activeapiname");
+            } else if ( document.URL.includes("cancelApi")) {
+                startapi.classList.remove("activeapiname");
+                statusapi.classList.remove("activeapiname");
                 ptp.classList.remove("activeapiname");
                 ptp.classList.add("secactive");
-            }
-            if( document.URL.includes("cancelApi")) {
                 cancelapi.classList.add("activeapiname");
-                ptp.classList.remove("activeapiname");
-                ptp.classList.add("secactive");
+            } else{
+                startapi.classList.remove("activeapiname");
+                statusapi.classList.remove("activeapiname");
+                cancelapi.classList.remove("activeapiname");
+                ptp.classList.add('activeapiname');
             }
         }
     }
 
 
     return (
+        // as home page has no split nav bar so not rendering the splitbar
         pageName === "home"
         ?
         null
         :
+        // if the page is not home page then we will the data accordinng to the page we are on
         <div className = 'sideSplitNav'>
             <nav className = 'secondNav'>
                 <nav className = 'splitnav'>
@@ -78,6 +90,7 @@ const SplitNavBarStarted = () => {
                         ?
                         <div className='main'>
                             {
+                                // if the page is get started then we render this section
                                 pageName === "gs"
                                 ?
                                 <div className = 'innerMain'>
@@ -91,9 +104,11 @@ const SplitNavBarStarted = () => {
                                 null
                             }
                             {   
+                                // if the page is API details started then we render this section
                                 pageName === 'api'
                                 ?
                                 <>
+                                    {/* main link */}
                                     <div className = 'innerMain'>
                                         <div className = 'navTab'>
                                             <a>
@@ -102,6 +117,7 @@ const SplitNavBarStarted = () => {
                                         </div>
                                     </div>
 
+                                    {/* sublinks */}
                                     <div className = 'navCell'>
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
@@ -117,6 +133,7 @@ const SplitNavBarStarted = () => {
                                 null
                             }
                             {
+                                // if the page is features then we render this section
                                 pageName === 'features'
                                 ?
                                 <>
@@ -128,22 +145,25 @@ const SplitNavBarStarted = () => {
                                         </div>
                                     </div>
 
+                                    {/* main link */}
                                     <div className = 'navCell'>
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    <a href = { webData.splitNav[0].FEATURES.SecTab.route } >
+                                                    {/* Link is used for navigation and it acts like anchor tag */}
+                                                    <Link to = { webData.splitNav[0].FEATURES.SecTab.route } >
                                                         <img src = { webData.splitNav[0].FEATURES.arrowImg } alt = { webData.splitNav[0].FEATURES.arrImgAlt }></img>
                                                         <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
+                                                {/* sublinks */}
                                                 <div className = 'apiNames'>
                                                     <ul>
                                                         {
                                                             webData.splitNav[0].FEATURES.secTabList.map(li => (
-                                                                <a href = { li.route } key = { li.li } >
+                                                                <Link to = { li.route } key = { li.li } >
                                                                     <li id = {li.id}> { li.li } </li>
-                                                                </a>
+                                                                </Link>
                                                             ))
                                                         }
                                                     </ul>

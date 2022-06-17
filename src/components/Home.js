@@ -6,12 +6,12 @@ import axios from 'axios';
 import Loading from './Loading';
 import SideNavBar from './SideNavBar';
 
-let data
-
 const Home = () => {
-
     const [ webData, setWebData ] = useState(); 
-
+    
+    let data;
+    
+    // getting the data from the api
     const getData = async () => {
         const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
         .catch((error) => {
@@ -20,6 +20,7 @@ const Home = () => {
         data = result.data;
         if(data !== undefined)
         {
+            // assigning it to webData in useState
             setWebData(data);
         }
     }
@@ -30,13 +31,16 @@ const Home = () => {
     
     return (
         <div>
+            {/* rendering topnavbar component */}
             <TopNavBar />
             <div className = 'homeMainDiv'>
                 <div className = 'sidebar'>
+                    {/* rendering sidenavbar component */}
                     <SideNavBar />
                     <main className = 'mainArea'>
                         <div className = 'titleDiv'>
                             {
+                                // rendering only if there is data in webData else loading screen is shown
                                 webData
                                 ?
                                 <div className = 'bgImageDiv'>
@@ -44,7 +48,6 @@ const Home = () => {
                                         <h1>
                                             { webData.headerArea[0].headerTitle }
                                         </h1>
-
 
                                         <div className = 'bottomTitleText'>
                                             <a>
@@ -57,27 +60,12 @@ const Home = () => {
                                     </div>
                                 </div>
                                 :
+                                // untill the response is null a loading screen will be shown
                                 <Loading />
                             }
                         </div>
-
+                        {/* cards component */}
                         <CardsSection />
-                        
-                        {/* <PaymentSection />
-
-                        <BankingSection /> */}
-
-                        {/* <section id = 'home-partners' style = {{ height:"100vh", paddingTop:"200px" }}>
-                            <div>
-                                partners
-                            </div>
-                        </section>
-
-                        <section id = 'home-devtools' style = {{ height:"100vh", paddingTop:"200px" }}>
-                            <div>
-                                devtools
-                            </div>
-                        </section> */}
                     </main>
                 </div>
             </div>

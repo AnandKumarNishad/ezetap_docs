@@ -6,10 +6,12 @@ import SideNavBar from './SideNavBar';
 const GetStarted = () => {
     return (
         <div>
+            {/* rendering topnavbar component */}
             <TopNavBar />
             <div>
                 <div>
                     <div>
+                        {/* rendering sidenavbar component */}
                         <SideNavBar />
                     </div>
                     <main style={{ marginTop: "20px" }}>
