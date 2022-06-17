@@ -1,4 +1,7 @@
-.pushToPay {
+.pushToPay,
+.startapi,
+.statusapi,
+.cancelapi {
     text-align: left;
     margin: 0px 100px;
 }
@@ -26,7 +29,7 @@ tr {
 th {
     text-align: left;
     padding-left: 15px;
-    border: 1px solid #E77A2B;
+    border: 1px solid grey;
     border-bottom: 2px solid #E77A2B;
     margin: 0;
 }

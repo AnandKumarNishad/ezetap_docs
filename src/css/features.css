@@ -1,5 +1,6 @@
 table {
     text-align: left;
+    margin-bottom: 50px;
 }
 
 .markdown td.style {
@@ -8,5 +9,37 @@ table {
 
 td,
 th {
+    vertical-align: top;
     padding: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    color: #E77A2B;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+h2 {
+    color: #E77A2B;
+    text-decoration: underline;
+}
+
+h4 {
+    font-size: 25px;
+    color: #EEA428;
+}
+
+p img {
+    width:930px;
+    height: 450px;
+}
+
+li::marker {
+    color: #E77A2B;
+}
+
+tr th {
+    background-color: #E77A2B;
+    color: white;
 }
