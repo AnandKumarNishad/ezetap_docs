@@ -22,6 +22,7 @@
     color: #202020;
     text-align: center;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .container span {

@@ -45,7 +45,7 @@ const Home = () => {
                                 ?
                                 <div className = 'bgImageDiv'>
                                     <div className = 'heading'>
-                                        <h1>
+                                        <h1 className = 'head'>
                                             { webData.headerArea[0].headerTitle }
                                         </h1>
 

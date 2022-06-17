@@ -54,6 +54,9 @@
     font-weight: 700;
     padding-bottom: 30px;
     cursor: default;
+    font-style: italic;
+    color: #2D2D2D;
+    text-decoration: none;
 }
 
 .bottomTitleText {

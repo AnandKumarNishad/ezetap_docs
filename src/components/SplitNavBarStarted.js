@@ -123,7 +123,7 @@ const SplitNavBarStarted = () => {
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
                                                     <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                                    <p>{ webData.splitNav[0].API.SecTab.first }</p>
+                                                    <p style = {{ color: "#E77A2B"}} >{ webData.splitNav[0].API.SecTab.first }</p>
                                                 </div>
                                             </div>
                                         </div>
