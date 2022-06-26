@@ -95,9 +95,13 @@ const SplitNavBarStarted = () => {
                                 ?
                                 <div className = 'innerMain'>
                                     <div className = 'navTab'>
-                                        <a>
-                                            <span>{ webData.splitNav[0].GS.mainTab }</span>
-                                        </a>
+                                        {
+                                            webData.splitNav[0].GS.mainTab.map(title => (
+                                                <a>
+                                                    <span>{ title.title }</span>
+                                                </a>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                                 :
@@ -111,9 +115,13 @@ const SplitNavBarStarted = () => {
                                     {/* main link */}
                                     <div className = 'innerMain'>
                                         <div className = 'navTab'>
-                                            <a>
-                                                <span>{ webData.splitNav[0].API.mainTab }</span>
-                                            </a>
+                                            {
+                                                webData.splitNav[0].API.mainTab.map(title => (
+                                                    <a>
+                                                        <span>{ title.title }</span>
+                                                    </a>
+                                                ))
+                                            }
                                         </div>
                                     </div>
 
@@ -139,9 +147,13 @@ const SplitNavBarStarted = () => {
                                 <>
                                     <div className = 'innerMain'>
                                         <div className = 'navTab'>
-                                            <a>
-                                                <span>{ webData.splitNav[0].FEATURES.mainTab }</span>
-                                            </a>
+                                            {
+                                                webData.splitNav[0].FEATURES.mainTab.map(title => (
+                                                    <a>
+                                                        <span>{ title.title }</span>
+                                                    </a>
+                                                ))
+                                            }   
                                         </div>
                                     </div>
 

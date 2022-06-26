@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
 import '../css/features.css';
 import ReactMarkdown from 'react-markdown';
+import CurlReq from './CurlReq';
 
 
 const Features = () => {
@@ -118,6 +119,10 @@ const Features = () => {
                                     ?
                                     <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 350px" }}>
                                         <ReactMarkdown className = 'markdown' children = { startApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                        <div className = 'url'>
+                                            <div className = 'ib'>/startApi</div>
+                                        </div>
+                                        <CurlReq />
                                     </section>
                                     :
                                     null
@@ -127,6 +132,10 @@ const Features = () => {
                                     ?
                                     <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 350px" }}>
                                         <ReactMarkdown className = 'markdown' children = { statusApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                        <div className = 'url'>
+                                            <div className = 'ib'>/statusApi</div>
+                                        </div>
+                                        <CurlReq />
                                     </section>
                                     :
                                     null
@@ -136,6 +145,10 @@ const Features = () => {
                                     ?
                                     <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 350px" }}>
                                        <ReactMarkdown className = 'markdown' children = { cancelApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                       <div className = 'url'>
+                                            <div className = 'ib'>/cancelApi</div>
+                                        </div>
+                                        <CurlReq />
                                     </section>
                                     :
                                     null
