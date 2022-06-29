@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import SideNavBar from './SideNavBar';
-import TopNavBar from './TopNavBar';
 import '../css/APIDetails.css'
+import '../css/orangeStartTheme.css';
 import axios from 'axios';
 import Loading from "../components/Loading";
 import Markdown from 'react-markdown';
@@ -62,20 +61,21 @@ const APIDetails = () => {
         getData();
         getApiData();
         getParamsData();
+        // eslint-disable-next-line
     }, []);
 
     return (
         <div>
             {/* rendering the topnavbar */}
-            <TopNavBar />
-            <div>
-                <div>
-                    <div>
+            {/* <TopNavBar /> */}
+            {/* <div> */}
+                {/* <div> */}
+                    {/* <div> */}
                         {/* rendering the sidenavbar */}
-                        <SideNavBar />
-                    </div>
+                        {/* <SideNavBar /> */}
+                    {/* </div> */}
                     <main style={{ marginTop: "20px" }}>
-                        <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
+                        <section className = 'pushToPay' style = {{ padding: "0px 350px" }}>
                             {/* rendering the data of a md file */}
                             <Markdown children = { apiData } />
                             {
@@ -110,7 +110,7 @@ const APIDetails = () => {
                                                         )
                                                     })
                                                     :
-                                                    <Loading />
+                                                    null
                                                 }
                                             </table>
                                         </div>
@@ -121,8 +121,8 @@ const APIDetails = () => {
                             }
                         </section>
                     </main>
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
         </div>
     );
 };

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import TopNavBar from './TopNavBar';
 import '../css/home.css';
 import CardsSection from './CardsSection';
 import axios from 'axios';
 import Loading from './Loading';
-import SideNavBar from './SideNavBar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [ webData, setWebData ] = useState(); 
@@ -27,16 +26,17 @@ const Home = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line
     }, []);
     
     return (
         <div>
             {/* rendering topnavbar component */}
-            <TopNavBar />
-            <div className = 'homeMainDiv'>
-                <div className = 'sidebar'>
+            {/* <TopNavBar /> */}
+            {/* <div className = 'homeMainDiv'> */}
+                {/* <div className = 'sidebar'> */}
                     {/* rendering sidenavbar component */}
-                    <SideNavBar />
+                    {/* <SideNavBar /> */}
                     <main className = 'mainArea'>
                         <div className = 'titleDiv'>
                             {
@@ -50,9 +50,9 @@ const Home = () => {
                                         </h1>
 
                                         <div className = 'bottomTitleText'>
-                                            <a>
+                                            <Link to = '/'>
                                                 <h3>{ webData.headerArea[0].headerText }</h3>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className = 'heroImg'>
@@ -67,8 +67,8 @@ const Home = () => {
                         {/* cards component */}
                         <CardsSection />
                     </main>
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
         </div>
     );
 };

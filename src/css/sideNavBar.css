@@ -1,4 +1,4 @@
-.sideNavBarMainDiv{
+.sideNavBarMainDiv {
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -12,10 +12,11 @@
     flex-direction: column;
     width: 92px;
     height: 100%;
-    background-color: #2D2D2D;
-    color: #ffffff;
+    /* background-color: #2D2D2D; */
+    /* color: #ffffff; */
     margin: 0;
     padding: 0;
+    margin-top: -10px;
 }
 
 .mainNavBtn {
@@ -42,6 +43,7 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
+    border-radius: 0 10px;
 }
 
 .navBtns a {
@@ -51,7 +53,7 @@
     position: inherit;
     outline: none;
     cursor: pointer;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .navoption {
@@ -85,7 +87,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    /* color: #ffffff; */
     margin: 0;
     padding: 4px 4px 0;
     font-size: 12px;
@@ -96,6 +98,6 @@
     position: none;
 }
 
-.navBtns.active {
-    background-color: #939393;
-}
+/* .navBtns.active {
+    background-color: #E77A2B;
+} */

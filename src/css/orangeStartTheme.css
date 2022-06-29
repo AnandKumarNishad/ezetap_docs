@@ -1,0 +1,242 @@
+border color for table
+th, 
+td {
+    border: 1px solid grey;
+}
+
+/* cards */
+/* cards heading */
+.container h2 {
+    color: #202020;
+}
+
+/* cards heading span */
+.container span {
+    color: #FF7E2E;
+}
+
+/* cards desktopversion */
+.desktopversion {
+    color: #58595b;
+}
+
+.flip-wrapper {
+    color: #58595b;
+}
+
+.flip-card {
+    color: #58595b;
+}
+
+.flip-card-inner {
+    color: #58595b;
+}
+
+/* card front */
+.flip-card-front {
+    color:black;
+    box-shadow: 0px 3px 16px #0000001f;
+}
+
+.flip-card-front img {
+    color: black;
+}
+
+/* cards back */
+.flip-card-back {
+    background-color: #2D2D2D;
+    color: white;
+    box-shadow: 0px 3px 86px #00000014;
+}
+
+.flip-card-back img{
+    color: white;
+}
+
+.flip-card-back h5 {
+    color: #fff;
+}
+
+.flip-card-back ul li a {
+    color: #fff;
+}
+
+.flip-card-back ul li a::after{
+    color: #FF7E2E;
+}
+
+.flip-card-back ul li a:hover {
+    color: #FF7E2E;
+}
+
+/* curl */
+/* curl req. get part */
+.url {
+    color: #4f5c5d;
+}
+
+.url::before {
+    background: #08ca73;
+    color: #fff;
+}
+
+/* heading for api (GET /api) */
+.ib {
+    background: rgba(108,159,255,0.1);
+    background-color: #E6FAF1;
+    border: 1px solid rgba(8, 202, 115, 0.6);
+}
+
+/* curl code block */
+.codeblock .code-labels {
+    background: #2d2d2d;
+}
+
+.codeblock .code-labels label{
+    color: #ffffff;
+}
+
+.code-container {
+    background: #2d2d2d;
+    border: 1px solid #2d2d2d;
+}
+
+.copy-btn {
+    background: #2d2d2d;
+    color: #E77A2B;
+}
+
+code {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+code span {
+    color: #E77A2B;
+}
+
+/* tabs for language */
+.tabs {
+    color: white;
+    background: #2d2d2d;
+}
+
+.active-tab {
+    color: #E77A2B;
+    font-weight: 800;
+}
+
+/* for active tab borders */
+.active-tab::before,
+.active-tab::after {
+    background: #E77A2B;
+}
+
+.content hr {
+    background: #222;
+}
+
+/* features */
+/* headings (H1, H2, H3, H4, H5, H6) */
+h1,
+h2,
+h4,
+li::marker{
+    color: #E77A2B;
+}
+
+strong {
+    color:#E77A2B;
+}
+
+/* table background on features pages */
+tr th {
+    background-color: #E77A2B;
+    color: white;
+}
+
+/* home */
+.heading,
+.heading h1,
+.bottomTitleText h3 {
+    color: #2D2D2D;
+}
+
+/* side NavBar */
+.sideNavBar {
+    background-color: #2D2D2D;
+    color: #ffffff;
+}
+
+.navText {
+    color: #ffffff
+}
+
+.navBtns.active {
+    background-color: #E77A2B;
+}
+
+/* split NavBar */
+.secondNav {
+    border-right: 2px solid #E77A2B;
+    background-color: #f7ede2;
+}
+
+.navTab a span {
+    color:#E77A2B;
+}
+
+.navTab p {
+    color: #A13F36
+}
+
+.navBtnActive {
+    background-color: #E77A2B;
+}
+
+.navBtn a {
+    color: #2D2D2D;
+}
+
+.activeapiname {
+    color: #E77A2B;
+}
+
+/* top NavBar */
+.mainDiv {
+    background-color: #2D2D2D;
+    border: 1px solid #2D2D2D;
+}
+
+.active a p {
+    color: #E77A2B;
+}
+
+.linkDiv a p {
+    color: #ffffff;
+}
+
+.buttonDiv a p {
+    color: #E77A2B;
+}
+
+.buttonDiv a button {
+    background-color: #E77A2B;
+    border: 1px solid #E77A2B;
+}
+
+.buttonDiv a button p {
+    color: #fff;
+}
+
+.searchbar {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(197, 204, 216);
+}
+
+.searchbar input {
+    background-color: white;
+}
+
+.searchbar input:disabled {
+    color: rgb(84, 84, 84);
+}

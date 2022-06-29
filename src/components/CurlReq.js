@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../css/curlReq.css';
+import '../css/orangeStartTheme.css';
 
 const CurlReq = () => {
 
@@ -47,6 +48,7 @@ const CurlReq = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line
     }, []);
 
     const toggleTab = (index) => {
@@ -63,7 +65,7 @@ const CurlReq = () => {
                                 webData
                                 ?
                                 webData.curldata.buttons.map(btn => (
-                                    <button className = { toggle === btn.index ? 'tabs active-tab' : 'tabs' } onClick = { () => toggleTab(btn.index) }>
+                                    <button key = { btn.text } className = { toggle === btn.index ? 'tabs active-tab' : 'tabs' } onClick = { () => toggleTab(btn.index) }>
                                         { btn.text }
                                     </button>
                                 ))
@@ -78,7 +80,7 @@ const CurlReq = () => {
                                 webData
                                 ?
                                 webData.curldata.code.map(codeblock => (
-                                   <code className = { toggle === codeblock.index ? 'content active-content' : 'content' }>
+                                   <code key = { codeblock.language } className = { toggle === codeblock.index ? 'content active-content' : 'content' }>
                                         { codeblock.language }
                                         <div dangerouslySetInnerHTML = {{ __html: codeblock.html }}></div>
                                     </code> 

@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import SideNavBar from './SideNavBar';
-import TopNavBar from './TopNavBar';
 import Loading from './Loading';
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
 import '../css/features.css';
 import ReactMarkdown from 'react-markdown';
 import CurlReq from './CurlReq';
+import RightInPageNavi from './RightInPageNavi';
 
 
 const Features = () => {
@@ -82,6 +81,7 @@ const Features = () => {
         getStartApiData();
         getStatusApiData();
         getCancelApiData();
+        // eslint-disable-next-line
     }, []);
 
     // getting the last segment from the url
@@ -96,20 +96,21 @@ const Features = () => {
                 ?
                 <div>
                     {/* rendering topnavbar component */}
-                    <TopNavBar />
-                    <div>
-                        <div>
-                            <div>
+                    {/* <TopNavBar /> */}
+                    {/* <div> */}
+                        {/* <div> */}
+                            {/* <div> */}
                                 {/* rendering sidenavbar component */}
-                                <SideNavBar />
-                            </div>
-                            <main style={{ textAlign: "left" }}>
+                                {/* <SideNavBar /> */}
+                            {/* </div> */}
+                            <main style={{ textAlign: "left"}}>
                                 {/* rendering the data based on the active page from the split navbar */}
                                 {
                                     last === 'features'
                                     ?
-                                    <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 350px" }}>
+                                    <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 0 0 350px" }}>
                                         <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                        <RightInPageNavi />
                                     </section>
                                     :
                                     null
@@ -117,12 +118,15 @@ const Features = () => {
                                 {
                                     last === 'startApi'
                                     ?
-                                    <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 350px" }}>
-                                        <ReactMarkdown className = 'markdown' children = { startApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
-                                        <div className = 'url'>
-                                            <div className = 'ib'>/startApi</div>
+                                    <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 0 0 350px" }}>
+                                        <div>
+                                            <ReactMarkdown className = 'markdown' children = { startApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                            <div className = 'url'>
+                                                <div className = 'ib'>/startApi</div>
+                                            </div>
+                                            <CurlReq />
                                         </div>
-                                        <CurlReq />
+                                        <RightInPageNavi />
                                     </section>
                                     :
                                     null
@@ -130,12 +134,15 @@ const Features = () => {
                                 {
                                     last === 'statusApi'
                                     ?
-                                    <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 350px" }}>
-                                        <ReactMarkdown className = 'markdown' children = { statusApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
-                                        <div className = 'url'>
-                                            <div className = 'ib'>/statusApi</div>
+                                    <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 0 0 350px" }}>
+                                        <div>
+                                            <ReactMarkdown className = 'markdown' children = { statusApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                            <div className = 'url'>
+                                                <div className = 'ib'>/statusApi</div>
+                                            </div>
+                                            <CurlReq />
                                         </div>
-                                        <CurlReq />
+                                        <RightInPageNavi />
                                     </section>
                                     :
                                     null
@@ -143,19 +150,23 @@ const Features = () => {
                                 {
                                     last === 'cancelApi'
                                     ?
-                                    <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 350px" }}>
-                                       <ReactMarkdown className = 'markdown' children = { cancelApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
-                                       <div className = 'url'>
-                                            <div className = 'ib'>/cancelApi</div>
+                                    <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 0 0 350px" }}>
+                                        <div>
+                                            <ReactMarkdown className = 'markdown' children = { cancelApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                            <div className = 'url'>
+                                                 <div className = 'ib'>/cancelApi</div>
+                                             </div>
+                                             <CurlReq />
                                         </div>
-                                        <CurlReq />
+                                        <RightInPageNavi />
                                     </section>
                                     :
                                     null
                                 }
                             </main>
-                        </div>
-                    </div>
+                            {/* <RightInPageNavi /> */}
+                        {/* </div> */}
+                    {/* </div> */}
                 </div>
                 :
                 <Loading />

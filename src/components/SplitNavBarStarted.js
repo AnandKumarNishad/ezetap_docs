@@ -25,6 +25,7 @@ const SplitNavBarStarted = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line 
     }, []);
 
     // checking on which page we are on
@@ -93,17 +94,47 @@ const SplitNavBarStarted = () => {
                                 // if the page is get started then we render this section
                                 pageName === "gs"
                                 ?
-                                <div className = 'innerMain'>
-                                    <div className = 'navTab'>
-                                        {
-                                            webData.splitNav[0].GS.mainTab.map(title => (
-                                                <a>
-                                                    <span>{ title.title }</span>
-                                                </a>
-                                            ))
-                                        }
+                                <>
+                                    <div className = 'innerMain'>
+                                        <div className = 'navTab'>
+                                            {
+                                                webData.splitNav[0].GS.mainTab.map(title => (
+                                                    // eslint-disable-next-line 
+                                                    <a key = { title.title }>
+                                                        <span>{ title.title }</span>
+                                                    </a>
+                                                ))
+                                            }
+                                        </div>
                                     </div>
-                                </div>
+
+                                    {/* main link */}
+                                    {/* <div className = 'navCell'>
+                                        <div className = 'navInnerCell'>
+                                            <div className = 'navBtn'>
+                                                <div className = 'navTab'> */}
+                                                    {/* Link is used for navigation and it acts like anchor tag */}
+                                                    {/* <Link to = { webData.splitNav[0].GS.SecTab.route } >
+                                                        <img src = { webData.splitNav[0].GS.arrowImg } alt = { webData.splitNav[0].GS.arrImgAlt }></img>
+                                                        <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].GS.SecTab.first }</p>
+                                                    </Link> */}
+                                                {/* </div> */}
+                                                {/* sublinks */}
+                                                {/* <div className = 'apiNames'>
+                                                    <ul>
+                                                        {
+                                                            webData.splitNav[0].GS.secTabList.map(li => (
+                                                                <Link to = { li.route } key = { li.li } >
+                                                                    <li id = {li.id}> { li.li } </li>
+                                                                </Link>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> */}
+                                </>
                                 :
                                 null
                             }
@@ -117,7 +148,8 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navTab'>
                                             {
                                                 webData.splitNav[0].API.mainTab.map(title => (
-                                                    <a>
+                                                    // eslint-disable-next-line 
+                                                    <a key = { title.title }>
                                                         <span>{ title.title }</span>
                                                     </a>
                                                 ))
@@ -130,9 +162,22 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                                    <p style = {{ color: "#E77A2B"}} >{ webData.splitNav[0].API.SecTab.first }</p>
+                                                    {/* <Link> */}
+                                                        <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
+                                                        <p style = {{ color: "#E77A2B"}} >{ webData.splitNav[0].API.SecTab.first }</p>
+                                                    {/* </Link> */}
                                                 </div>
+                                                {/* <div className = 'apiNames'>
+                                                    <ul>
+                                                        {
+                                                            webData.splitNav[0].API.secTabList.map(li => (
+                                                                <Link to = { li.route } key = { li.li } >
+                                                                    <li id = {li.id}> { li.li } </li>
+                                                                </Link>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +194,8 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navTab'>
                                             {
                                                 webData.splitNav[0].FEATURES.mainTab.map(title => (
-                                                    <a>
+                                                    // eslint-disable-next-line 
+                                                    <a key = { title.title }>
                                                         <span>{ title.title }</span>
                                                     </a>
                                                 ))

@@ -8,8 +8,8 @@
     position: fixed;
     z-index: 200;
     overflow: auto;
-    border-right: 2px solid #E77A2B;
-    background-color: #f7ede2;
+    /* border-right: 2px solid #E77A2B;
+    background-color: #f7ede2; */
 }
 
 .navCell {
@@ -37,9 +37,11 @@
     height: 30px;
     cursor: pointer;
 }
+
 .navTab a span {
     font-size: 18px;
     font-weight: bolder;
+    /* color:#E77A2B; */
 }
 
 .navTab p {
@@ -49,6 +51,7 @@
     text-align: center;
     margin: 0;
     padding: 7px;
+    /* color: #A13F36 */
 }
 
 .navBtn {
@@ -66,9 +69,9 @@
     box-shadow: none;
 }
 
-.navBtnActive {
+/* .navBtnActive {
     background-color: #E77A2B;
-}
+} */
 
 .navBtn a {
     display: flex;
@@ -76,7 +79,7 @@
     position: inherit;
     outline: none;
     cursor: pointer;
-    color: #2D2D2D;
+    /* color: #2D2D2D; */
     font-weight: 500;
 }
 
@@ -99,9 +102,9 @@
     cursor: pointer;
 }
 
-.activeapiname {
+/* .activeapiname {
     color: #E77A2B;
-}
+} */
 
 .secactive {
     font-weight: 900;

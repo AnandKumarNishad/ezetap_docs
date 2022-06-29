@@ -24,6 +24,7 @@ const TopNavBar = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line 
     }, []);
     
     return (
@@ -55,6 +56,7 @@ const TopNavBar = () => {
                         <div className = 'buttonsMainDiv'>
                             <div className = ' buttonsInnerDiv'>
                                 <div className = 'buttonDiv'>
+                                    {/* eslint-disable-next-line  */}
                                     <a>
                                         <p> 
                                             { webData.topNavbar[2].firstBtnText } 
@@ -63,6 +65,7 @@ const TopNavBar = () => {
                                 </div>
     
                                 <div className = 'buttonDiv'>
+                                {/* eslint-disable-next-line  */}
                                     <a>
                                         <button>
                                             <p>

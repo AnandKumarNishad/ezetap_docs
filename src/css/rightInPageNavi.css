@@ -1,0 +1,7 @@
+.rightnavimain {
+    width: 240px;
+    height: fit-content;
+    border: 1px solid black;
+    margin-top: 60px;
+    padding: 50px;
+}

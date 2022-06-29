@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/cards.css';
 import Loading from './Loading';
 
@@ -25,6 +26,7 @@ const CardsSection = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line
     }, []);
 
     return (
@@ -56,15 +58,15 @@ const CardsSection = () => {
                                             <h5>{ card.cardBack.backtext }</h5>
                                             <ul>
                                                 <li>
-                                                    <a href = '/apiDetails'>{ card.cardBack.listlink.title1 }</a>
+                                                    <Link to = { card.cardBack.linkTo.link1 } >{ card.cardBack.listlink.title1 }</Link>
                                                 </li>
 
                                                 <li>
-                                                    <a href = '/'>{ card.cardBack.listlink.title2 }</a>
+                                                    <Link to = { card.cardBack.linkTo.link2 } >{ card.cardBack.listlink.title2 }</Link>
                                                 </li>
                                                 
                                                 <li>
-                                                    <a href = '/'>{ card.cardBack.listlink.title3 }</a>
+                                                    <Link to = { card.cardBack.linkTo.link3 } >{ card.cardBack.listlink.title3 }</Link>
                                                 </li>
                                             </ul>
                                         </div>

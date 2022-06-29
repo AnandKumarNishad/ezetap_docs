@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../css/sideNavBar.css'
 import SplitNavBarStarted from './SplitNavBarStarted';
 
 const SideNavBar = () => {
-    const navigate = useNavigate();
     const [ webData, setWebData ] = useState(); 
     
     let data;
@@ -26,21 +25,8 @@ const SideNavBar = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line 
     }, []);
-
-    // function for navigation from one page to another
-    const gotoNavi = (e) => {
-        const tab = e.target.id;
-        if(tab === "home") {
-            navigate("/");
-        } else if(tab === "getStarted") {
-            navigate("/getStarted");
-        } else if(tab === "features") {
-            navigate("/features");
-        } else if(tab === "api") {
-            navigate("/apiDetails");
-        }
-    }
 
     // function to find the active tab using the URL and id of the nav button
     const activetab = () => {
@@ -51,22 +37,31 @@ const SideNavBar = () => {
 
         if(home !== null ){
             home.classList.add("active");
+            getStarted.classList.remove("active");
+            features.classList.remove("active");
+            api.classList.remove("active");
         }
 
         // assigning the active css class to the active nav button
         if(getStarted !== null && features !== null && api !== null )
         {
             if( document.URL.includes("getStarted") ) {
-                getStarted.classList.add("active");
                 home.classList.remove("active");
+                getStarted.classList.add("active");
+                features.classList.remove("active");
+                api.classList.remove("active");
             }
             if( document.URL.includes("features") ) {
-                features.classList.add("active");
                 home.classList.remove("active");
+                getStarted.classList.remove("active");
+                features.classList.add("active");
+                api.classList.remove("active");
             } 
             if( document.URL.includes("apiDetails") ) {
-                api.classList.add("active");
                 home.classList.remove("active");
+                getStarted.classList.remove("active");
+                features.classList.remove("active");
+                api.classList.add("active");
             }
         }
     }
@@ -80,15 +75,15 @@ const SideNavBar = () => {
                 {
                     webData.sideNavbar.map(element => (
                         <div className = 'mainNavBtn' key = { element.type }>
-                            <div className = 'navBtns'  onClick = { gotoNavi } id = {element.type} >
-                                <a>
+                            <div className = 'navBtns' id = {element.type} >
+                                <Link to = { element.route }>
                                     <span className = 'navoption'>
                                         <img className = { element.iconAlt } src = { element.icon } alt ={ element.iconAlt } ></img>
                                     </span>
                                     <span className = 'navText'>
                                         { element.text }
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))

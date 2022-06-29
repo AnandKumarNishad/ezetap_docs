@@ -35,7 +35,7 @@
 }
 
 .heading {
-    color: #2D2D2D;
+    /* color: #2D2D2D; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -55,7 +55,7 @@
     padding-bottom: 30px;
     cursor: default;
     font-style: italic;
-    color: #2D2D2D;
+    /* color: #2D2D2D; */
     text-decoration: none;
 }
 
@@ -81,7 +81,7 @@
 
 .bottomTitleText h3 {
     text-align: start;
-    color: #2D2D2D;
+    /* color: #2D2D2D; */
     margin: 0;
     padding: 0;
     font-size: 30px;
@@ -93,7 +93,7 @@
     cursor: default;
 }
 
-.secondaryNavBar {
+/* .secondaryNavBar {
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -118,9 +118,9 @@
     margin: 0;
     padding: 0;
     flex: 0 1 auto;
-}
+} */
 
-.tabDiv {
+/* .tabDiv {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -171,4 +171,4 @@
 .API {
     width: 30px;
     height: 30px;
-}
+} */

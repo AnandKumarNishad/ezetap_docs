@@ -19,14 +19,14 @@
     font-weight: 300;
     margin-bottom: 50px;
     text-transform: uppercase;
-    color: #202020;
+    /* color: #202020; */
     text-align: center;
     box-sizing: border-box;
     text-decoration: none;
 }
 
 .container span {
-    color: #FF7E2E;
+    /* color: #FF7E2E; */
     box-sizing: border-box;
 }
 
@@ -34,7 +34,7 @@
     margin-left: -15px;
     margin-right: -15px;
     font-size: 18px;
-    color: #58595b;
+    /* color: #58595b; */
 }
 
 .flip-wrapper {
@@ -45,7 +45,7 @@
     min-height: 1px;
     box-sizing: border-box;
     font-size: 18px;
-    color: #58595b;
+    /* color: #58595b; */
 }
 
 .flip-card {
@@ -59,7 +59,7 @@
     box-sizing: border-box;
     display: block;
     font-size: 18px;
-    color: #58595b;
+    /* color: #58595b; */
 }
 
 .flip-card-inner {
@@ -71,7 +71,7 @@
     transform-style: preserve-3d;
     box-sizing: border-box;
     font-size: 18px;
-    color: #58595b;
+    /* color: #58595b; */
 }
 
 .flip-card:hover .flip-card-inner {
@@ -79,14 +79,14 @@
 }
 
 .flip-card-front {
-    background-color: #EBEBEB;
-    color: black;
+    background-color: #f7ede2;
+    /* color: black; */
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 50px;
-    box-shadow: 0px 3px 16px #0000001f;
+    /* box-shadow: 0px 3px 16px #0000001f; */
     box-sizing: border-box;
     display: block;
     text-align: center;
@@ -101,7 +101,7 @@
     border: 0;
     box-sizing: border-box;
     aspect-ratio: auto 120/120;
-    color: black;
+    /* color: black; */
     text-align: center;
     font-size: 18px;
 }
@@ -119,9 +119,9 @@
 }
 
 .flip-card-back {
-    background-color: #2D2D2D;
-    color: white;
-    box-shadow: 0px 3px 86px #00000014;
+    /* background-color: #2D2D2D; */
+    /* color: white;
+    box-shadow: 0px 3px 86px #00000014; */
 
     transform: rotateY(180deg);
     
@@ -145,7 +145,7 @@
     border: 0;
     box-sizing: border-box;
     aspect-ratio: auto 120/120;
-    color: white;
+    /* color: white; */
     text-align: center;
     font-size: 18px;
 }
@@ -164,7 +164,7 @@
     margin: 0;
     font-size: 16px;
     font-weight: 500;
-    color: #fff;
+    /* color: #fff; */
     padding: 0px 15px;
     padding-bottom: 15px;
     line-height: 24px;
@@ -189,7 +189,7 @@
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
     display: flex;
     background-color: transparent;
     box-sizing: border-box;
@@ -199,10 +199,10 @@
 .flip-card-back ul li a::after{
     content: '|';
     padding: 0px 10px;
-    color: #FF7E2E;
+    /* color: #FF7E2E; */
     box-sizing: border-box;
 }
-
+/* 
 .flip-card-back ul li a:hover {
     color: #FF7E2E;
-}
+} */
