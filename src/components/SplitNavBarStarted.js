@@ -25,7 +25,7 @@ const SplitNavBarStarted = () => {
 
     useEffect(() => {
         getData();
-        // eslint-disable-next-line 
+        // eslint-disable-next-line
     }, []);
 
     // checking on which page we are on
@@ -99,10 +99,9 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navTab'>
                                             {
                                                 webData.splitNav[0].GS.mainTab.map(title => (
-                                                    // eslint-disable-next-line 
-                                                    <a key = { title.title }>
+                                                    <Link to = '/getStarted' key = { title.title }>
                                                         <span>{ title.title }</span>
-                                                    </a>
+                                                    </Link>
                                                 ))
                                             }
                                         </div>
@@ -148,10 +147,9 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navTab'>
                                             {
                                                 webData.splitNav[0].API.mainTab.map(title => (
-                                                    // eslint-disable-next-line 
-                                                    <a key = { title.title }>
+                                                    <Link to = '/apiDetails' key = { title.title }>
                                                         <span>{ title.title }</span>
-                                                    </a>
+                                                    </Link>
                                                 ))
                                             }
                                         </div>
@@ -164,7 +162,7 @@ const SplitNavBarStarted = () => {
                                                 <div className = 'navTab'>
                                                     {/* <Link> */}
                                                         <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                                        <p style = {{ color: "#E77A2B"}} >{ webData.splitNav[0].API.SecTab.first }</p>
+                                                        <p>{ webData.splitNav[0].API.SecTab.first }</p>
                                                     {/* </Link> */}
                                                 </div>
                                                 {/* <div className = 'apiNames'>
@@ -194,10 +192,9 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navTab'>
                                             {
                                                 webData.splitNav[0].FEATURES.mainTab.map(title => (
-                                                    // eslint-disable-next-line 
-                                                    <a key = { title.title }>
+                                                    <Link to = '/features' key = { title.title }>
                                                         <span>{ title.title }</span>
-                                                    </a>
+                                                    </Link>
                                                 ))
                                             }   
                                         </div>

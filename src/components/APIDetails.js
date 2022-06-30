@@ -5,7 +5,6 @@ import axios from 'axios';
 import Loading from "../components/Loading";
 import Markdown from 'react-markdown';
 
-
 const APIDetails = () => {
     const [ webData, setWebData ] = useState(); 
     const [ apiData, setApiData ] = useState(); 

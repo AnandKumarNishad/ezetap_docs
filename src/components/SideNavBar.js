@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/sideNavBar.css'
 import SplitNavBarStarted from './SplitNavBarStarted';
 
 const SideNavBar = () => {
+    useNavigate();
     const [ webData, setWebData ] = useState(); 
     
     let data;
@@ -25,7 +26,7 @@ const SideNavBar = () => {
 
     useEffect(() => {
         getData();
-        // eslint-disable-next-line 
+        // eslint-disable-next-line
     }, []);
 
     // function to find the active tab using the URL and id of the nav button

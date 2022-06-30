@@ -16,7 +16,7 @@
     /* color: #ffffff; */
     margin: 0;
     padding: 0;
-    margin-top: -10px;
+    margin-top: -12px;
 }
 
 .mainNavBtn {
@@ -43,10 +43,11 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
-    border-radius: 0 10px;
+    border-radius: 0 15px;
 }
 
 .navBtns a {
+    width: 92px;
     display: flex;
     flex-direction: column;
     text-decoration: none;

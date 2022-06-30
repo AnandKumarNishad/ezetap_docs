@@ -4,6 +4,7 @@ import CardsSection from './CardsSection';
 import axios from 'axios';
 import Loading from './Loading';
 import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [ webData, setWebData ] = useState(); 
@@ -50,7 +51,7 @@ const Home = () => {
                                         </h1>
 
                                         <div className = 'bottomTitleText'>
-                                            <Link to = '/'>
+                                            <Link to = ''>
                                                 <h3>{ webData.headerArea[0].headerText }</h3>
                                             </Link>
                                         </div>
