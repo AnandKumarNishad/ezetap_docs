@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/TopNavBar.css';
 import '../App.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const TopNavBar = () => {
     const [ webData, setWebData ] = useState(); 
@@ -36,11 +37,12 @@ const TopNavBar = () => {
                 <div className = 'mainDiv'>
                     <div className = 'logoDiv'>
                         <div className = 'logoMainDiv'>
-                            <a href = '/'>
+                            <Link to = '/'>
                                 <div className = 'innerLogoDiv'>
-                                    <img src = { webData.topNavbar[0].logoURL } alt = { webData.topNavbar[0].logoURLAlt } width = '130px' height = '55px'/>
+                                {/* { webData.topNavbar[0].logoURL } */}
+                                    <img src = './images/ezetap_logo.gif' alt = { webData.topNavbar[0].logoURLAlt } width = '130px' height = '55px'/>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
     
@@ -57,22 +59,22 @@ const TopNavBar = () => {
                             <div className = ' buttonsInnerDiv'>
                                 <div className = 'buttonDiv'>
                                     {/* eslint-disable-next-line  */}
-                                    <a>
+                                    <Link to = '' >
                                         <p> 
                                             { webData.topNavbar[2].firstBtnText } 
                                         </p>
-                                    </a>
+                                    </Link>
                                 </div>
     
                                 <div className = 'buttonDiv'>
                                 {/* eslint-disable-next-line  */}
-                                    <a>
+                                    <Link to = ''>
                                         <button>
                                             <p>
                                                 { webData.topNavbar[2].secondBtnText }
                                             </p>
                                         </button>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
