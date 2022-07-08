@@ -40,7 +40,7 @@ const TopNavBar = () => {
                             <Link to = '/'>
                                 <div className = 'innerLogoDiv'>
                                 {/* { webData.topNavbar[0].logoURL } */}
-                                    <img src = './images/ezetap_logo.gif' alt = { webData.topNavbar[0].logoURLAlt } width = '130px' height = '55px'/>
+                                    <img src = { webData.topNavbar[0].logoURL } alt = { webData.topNavbar[0].logoURLAlt } width = '130px' height = '55px'/>
                                 </div>
                             </Link>
                         </div>

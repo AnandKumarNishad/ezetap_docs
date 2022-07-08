@@ -32,35 +32,35 @@ const SideNavBar = () => {
     // function to find the active tab using the URL and id of the nav button
     const activetab = () => {
         let home = document.querySelector('#home');
-        let getStarted = document.querySelector('#getStarted');
+        // let getStarted = document.querySelector('#getStarted');
         let features = document.querySelector('#features');
         let api = document.querySelector('#api');
 
         if(home !== null ){
             home.classList.add("active");
-            getStarted.classList.remove("active");
+            // getStarted.classList.remove("active");
             features.classList.remove("active");
             api.classList.remove("active");
         }
 
         // assigning the active css class to the active nav button
-        if(getStarted !== null && features !== null && api !== null )
+        if(features !== null && api !== null )
         {
             if( document.URL.includes("getStarted") ) {
                 home.classList.remove("active");
-                getStarted.classList.add("active");
+                // getStarted.classList.add("active");
                 features.classList.remove("active");
                 api.classList.remove("active");
             }
             if( document.URL.includes("features") ) {
                 home.classList.remove("active");
-                getStarted.classList.remove("active");
+                // getStarted.classList.remove("active");
                 features.classList.add("active");
                 api.classList.remove("active");
             } 
             if( document.URL.includes("apiDetails") ) {
                 home.classList.remove("active");
-                getStarted.classList.remove("active");
+                // getStarted.classList.remove("active");
                 features.classList.remove("active");
                 api.classList.add("active");
             }
@@ -76,7 +76,7 @@ const SideNavBar = () => {
                 {
                     webData.sideNavbar.map(element => (
                         <div className = 'mainNavBtn' key = { element.type }>
-                            <div className = 'navBtns' id = {element.type} >
+                            <div className = { element.class } id = {element.type} >
                                 <Link to = { element.route }>
                                     <span className = 'navoption'>
                                         <img className = { element.iconAlt } src = { element.icon } alt ={ element.iconAlt } ></img>

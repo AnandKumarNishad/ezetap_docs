@@ -5,20 +5,20 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
 import '../css/features.css';
 import ReactMarkdown from 'react-markdown';
-import CurlReq from './CurlReq';
+// import CurlReq from './CurlReq';
 import RightInPageNavi from './RightInPageNavi';
 
 
 const Features = () => {
     const [ webData, setWebData ] = useState();
-    const [ startApiData, setStartApi ] = useState(); 
-    const [ statusApiData, setStatusApi ] = useState(); 
-    const [ cancelApiData, setCancelApi ] = useState(); 
+    // const [ startApiData, setStartApi ] = useState(); 
+    // const [ statusApiData, setStatusApi ] = useState(); 
+    // const [ cancelApiData, setCancelApi ] = useState(); 
     
     let data;
-    let startData;
-    let statusData;
-    let cancelData;
+    // let startData;
+    // let statusData;
+    // let cancelData;
     
     // getting the features md file data from the api
     const getData = async () => {
@@ -34,55 +34,63 @@ const Features = () => {
         }
     }
 
-    // getting the start Api md file data from the api
-    const getStartApiData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/startapi")
-        .catch((error) => {
-            console.log(error.message);
-        });
-        startData = result.data;
-        if(startData !== undefined)
-        {
-            // assigning it to startData in useState
-            setStartApi(startData);
-        }
-    }
+    // // getting the start Api md file data from the api
+    // const getStartApiData = async () => {
+    //     const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/startapi")
+    //     .catch((error) => {
+    //         console.log(error.message);
+    //     });
+    //     startData = result.data;
+    //     if(startData !== undefined)
+    //     {
+    //         // assigning it to startData in useState
+    //         setStartApi(startData);
+    //     }
+    // }
 
-    // getting the start Api md file data from the api
-    const getStatusApiData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/statusapi")
-        .catch((error) => {
-            console.log(error.message);
-        });
-        statusData = result.data;
-        if(statusData !== undefined)
-        {
-            // assigning it to statusData in useState
-            setStatusApi(statusData);
-        }
-    }
+    // // getting the start Api md file data from the api
+    // const getStatusApiData = async () => {
+    //     const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/statusapi")
+    //     .catch((error) => {
+    //         console.log(error.message);
+    //     });
+    //     statusData = result.data;
+    //     if(statusData !== undefined)
+    //     {
+    //         // assigning it to statusData in useState
+    //         setStatusApi(statusData);
+    //     }
+    // }
 
-    // getting the start Api md file data from the api
-    const getCancelApiData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/cancelapi")
-        .catch((error) => {
-            console.log(error.message);
-        });
-        cancelData = result.data;
-        if(cancelData !== undefined)
-        {
-            // assigning it to cancelData in useState
-            setCancelApi(cancelData);
-        }
-    }
+    // // getting the start Api md file data from the api
+    // const getCancelApiData = async () => {
+    //     const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/cancelapi")
+    //     .catch((error) => {
+    //         console.log(error.message);
+    //     });
+    //     cancelData = result.data;
+    //     if(cancelData !== undefined)
+    //     {
+    //         // assigning it to cancelData in useState
+    //         setCancelApi(cancelData);
+    //     }
+    // }
 
     useEffect(() => {
         getData();
-        getStartApiData();
-        getStatusApiData();
-        getCancelApiData();
+        // getStartApiData();
+        // getStatusApiData();
+        // getCancelApiData();
         // eslint-disable-next-line
     }, []);
+
+    function RouterLink(props) {
+        return (
+          props.href.match(/^(https?:)?\/\//)
+            ? <a href={props.href}>{props.children}</a>
+            : <Link to={props.href}>{props.children}</Link>
+        );
+    }
 
     // getting the last segment from the url
     const segments = document.URL.split('/');
@@ -109,13 +117,13 @@ const Features = () => {
                                     last === 'features'
                                     ?
                                     <section className = 'pushToPay' id = 'pushToPay' style = {{ padding: "0px 0 0 350px" }}>
-                                        <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                        <ReactMarkdown className = 'markdown' children = { webData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } renderers = {{ Link: RouterLink }}/>
                                         <RightInPageNavi />
                                     </section>
                                     :
                                     null
                                 }
-                                {
+                                {/* {
                                     last === 'startApi'
                                     ?
                                     <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 0 0 350px" }}>
@@ -162,7 +170,7 @@ const Features = () => {
                                     </section>
                                     :
                                     null
-                                }
+                                } */}
                             </main>
                             {/* <RightInPageNavi /> */}
                         {/* </div> */}

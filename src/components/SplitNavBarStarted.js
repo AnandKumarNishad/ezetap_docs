@@ -160,12 +160,12 @@ const SplitNavBarStarted = () => {
                                         <div className = 'navInnerCell'>
                                             <div className = 'navBtn'>
                                                 <div className = 'navTab'>
-                                                    {/* <Link> */}
+                                                    <Link to = { webData.splitNav[0].API.SecTab.route } >
                                                         <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                                        <p>{ webData.splitNav[0].API.SecTab.first }</p>
-                                                    {/* </Link> */}
+                                                        <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].API.SecTab.first }</p>
+                                                    </Link>
                                                 </div>
-                                                {/* <div className = 'apiNames'>
+                                                <div className = 'apiNames'>
                                                     <ul>
                                                         {
                                                             webData.splitNav[0].API.secTabList.map(li => (
@@ -175,10 +175,24 @@ const SplitNavBarStarted = () => {
                                                             ))
                                                         }
                                                     </ul>
+                                                </div>
+                                                {/* <div className = 'navTab'>
+                                                    <Link to = '/apiDetails' >
+                                                        <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
+                                                        <p id = "ptp" className = 'activeapiname'>Pull to Pay</p>
+                                                    </Link>
+                                                </div>
+
+                                                <div className = 'navTab'>
+                                                    <Link to = '/apiDetails' >
+                                                        <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
+                                                        <p id = "ptp" className = 'activeapiname'>Tap to Pay</p>
+                                                    </Link>
                                                 </div> */}
                                             </div>
                                         </div>
                                     </div>
+                                    { activeLink() }
                                 </>
                                 :
                                 null
@@ -211,8 +225,21 @@ const SplitNavBarStarted = () => {
                                                         <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].FEATURES.SecTab.first }</p>
                                                     </Link>
                                                 </div>
+                                                {/* <div className = 'navTab'>
+                                                    <Link to = '/features' >
+                                                        <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
+                                                        <p id = "ptp" className = 'activeapiname'>Pull to Pay</p>
+                                                    </Link>
+                                                </div>
+
+                                                <div className = 'navTab'>
+                                                    <Link to = '/features' >
+                                                        <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
+                                                        <p id = "ptp" className = 'activeapiname'>Tap to Pay</p>
+                                                    </Link>
+                                                </div> */}
                                                 {/* sublinks */}
-                                                <div className = 'apiNames'>
+                                                {/* <div className = 'apiNames'>
                                                     <ul>
                                                         {
                                                             webData.splitNav[0].FEATURES.secTabList.map(li => (
@@ -222,11 +249,11 @@ const SplitNavBarStarted = () => {
                                                             ))
                                                         }
                                                     </ul>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
-                                    { activeLink() }
+                                    {/* { activeLink() } */}
                                 </>
                                 :
                                 null
