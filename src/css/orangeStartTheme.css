@@ -76,9 +76,9 @@ td {
     color: #2D2D2D;
 }
 
-.flip-card-back ul li a::after{
+/* .flip-card-back ul li a::after{
     color: #2d2d2d;
-}
+} */
 
 .flip-card-back ul li a:hover {
     color: #ff6a00;
