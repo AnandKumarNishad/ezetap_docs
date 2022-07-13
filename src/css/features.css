@@ -58,5 +58,9 @@ p img {
 
 .markdown {
     width: 951px;
-    padding-right: 100px;
+    padding-right: 50px;
+}
+
+#pushToPay img {
+    border: 2px solid #E77A2B;
 }

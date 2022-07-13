@@ -56,7 +56,7 @@ const CurlReq = () => {
     };
 
     return (
-        <section>
+        <section id = "curl">
             <div className = 'main-container'>
                 <aside>
                     <pre className = 'codeblock has-label'>

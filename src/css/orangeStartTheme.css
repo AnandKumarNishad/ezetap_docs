@@ -6,16 +6,24 @@ td {
     border: 1px solid grey;
 }
 
+
 /* cards */
+/* cards sections background */
+.container-fluid {
+    background: #f7ede2;
+}
+
 /* cards heading */
 .container h2 {
     color: #202020;
 }
 
+
 /* cards heading span */
 .container span {
     color: #FF7E2E;
 }
+
 
 /* cards desktopversion */
 .desktopversion {
@@ -34,10 +42,12 @@ td {
     color: #58595b;
 }
 
+
 /* card front */
 .flip-card-front {
-    background-color: #f7ede2;
-    color:black;
+    background-image: linear-gradient(-53deg, #f9d2447d 20%, #f0961957 80%);
+    /* background-color: #F9D344; */
+    color: #2D2D2D;
     box-shadow: 0px 3px 16px #0000001f;
 }
 
@@ -45,32 +55,35 @@ td {
     color: black;
 }
 
+
 /* cards back */
 .flip-card-back {
-    background-color: #2D2D2D;
-    color: white;
+    background-image: linear-gradient(-53deg, #f0961964 20%, #e1472f46 80%);
+    /* background-color: #ff62006b; */
+    color: #2D2D2D;
     box-shadow: 0px 3px 86px #00000014;
 }
 
 .flip-card-back img{
-    color: white;
+    color: #2D2D2D;
 }
 
 .flip-card-back h5 {
-    color: #fff;
+    color: #2D2D2D;
 }
 
 .flip-card-back ul li a {
-    color: #fff;
+    color: #2D2D2D;
 }
 
 .flip-card-back ul li a::after{
-    color: #FF7E2E;
+    color: #2d2d2d;
 }
 
 .flip-card-back ul li a:hover {
-    color: #FF7E2E;
+    color: #ff6a00;
 }
+
 
 /* curl */
 /* curl req. get part */
@@ -79,16 +92,18 @@ td {
 }
 
 .url::before {
-    background: #08ca73;
+    background: #E77A2B;
     color: #fff;
 }
+
 
 /* heading for api (GET /api) */
 .ib {
     background: rgba(108,159,255,0.1);
-    background-color: #E6FAF1;
-    border: 1px solid rgba(8, 202, 115, 0.6);
+    background-color: #f7ede2;
+    border: 2px solid #E77A2B;
 }
+
 
 /* curl code block */
 .codeblock .code-labels {
@@ -117,6 +132,7 @@ code span {
     color: #E77A2B;
 }
 
+
 /* tabs for language */
 .tabs {
     color: white;
@@ -128,6 +144,7 @@ code span {
     font-weight: 800;
 }
 
+
 /* for active tab borders */
 .active-tab::before,
 .active-tab::after {
@@ -138,24 +155,41 @@ code span {
     background: #222;
 }
 
+
 /* features */
 /* headings (H1, H2, H3, H4, H5, H6) */
 h1,
 h2,
 h4,
 li::marker{
-    color: #E77A2B;
+    color: #2D2D2D;
 }
 
 strong {
-    color:#E77A2B;
+    color:#2D2D2D;
 }
+
+
+/* NOTE */
+blockquote {
+    /* max-width: fit-content; */
+    padding: 1px 6px;
+    background-color: #ffc78c;
+    border-left: 4px solid #E77A2B;
+    margin: 0;
+}
+
 
 /* table background on features pages */
 tr th {
-    background-color: #E77A2B;
+    background-color: #2D2D2D;
     color: white;
 }
+
+td {
+    background-color: #f7ede284;
+}
+
 
 /* home */
 .heading,
@@ -164,10 +198,12 @@ tr th {
     color: #2D2D2D;
 }
 
+
 /* head image */
 .bgImageDiv {
     background-image: url('../../public/images/topBannerBackground.jpg');
 }
+
 
 /* side NavBar */
 .sideNavBar {
@@ -183,6 +219,7 @@ tr th {
     background-color: #E77A2B;
 }
 
+
 /* split NavBar */
 .secondNav {
     border-right: 2px solid #E77A2B;
@@ -190,11 +227,11 @@ tr th {
 }
 
 .navTab a span {
-    color:#E77A2B;
+    color:#2D2D2D;
 }
 
 .navTab p {
-    color: #A13F36
+    color: #E77A2B;
 }
 
 .navBtnActive {
@@ -208,6 +245,7 @@ tr th {
 .activeapiname {
     color: #E77A2B;
 }
+
 
 /* top NavBar */
 .mainDiv {
@@ -247,4 +285,50 @@ tr th {
 
 .searchbar input:disabled {
     color: rgb(84, 84, 84);
+}
+
+
+/* Best Practices */
+.abc {
+    background-color: rgba(64, 237, 38, 0.116);
+    border-left: 4px solid rgb(0, 255, 64);
+    padding: 20px 10px;
+    padding-left: 30px;
+}
+
+.bold {
+    /* background-color: rgb(249, 200, 193); */
+    font-weight: 900;
+}
+
+.ital {
+    /* background-color: rgb(249, 200, 193); */
+    font-style: italic;
+}
+
+
+/* Right side in page navigation */
+/* list heading */
+.rnlist {
+    border-left: 2px solid #E77A2B;
+}
+
+/* list sub list */
+.rnsublist {
+    border-left: 2px solid #E77A2B;
+}
+
+/* active colors for list and sublist */
+.activern,
+.activesubrn {
+    border-left: 3px solid #E77A2B;
+    background-color: #fff;
+    color: #E77A2B;
+}
+
+.main,
+.parameter,
+.sampleReqRes,
+.curl {
+    color: #2d2d2d;
 }

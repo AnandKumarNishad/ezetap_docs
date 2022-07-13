@@ -4,6 +4,7 @@
 .cancelapi {
     text-align: left;
     margin: 0px 100px;
+    padding-top: 60px;
 }
 
 .dataGrid {
@@ -36,4 +37,12 @@ td {
     padding-left: 15px;
     /* border: 1px solid grey; */
     margin: 0;
+}
+
+.parameter {
+    width: 220px;
+}
+
+.datatype {
+    width: 300px;
 }

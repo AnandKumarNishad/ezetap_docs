@@ -22,10 +22,9 @@ function App() {
                   <Route exact path = '/' element = { <Home /> } />
                   <Route exact path = '/getStarted' element = { <GetStarted /> } />
                   <Route exact path = '/features' element = { <Features /> } />
-                  <Route exact path = '/features/startApi' element = { <Features /> } />
-                  <Route exact path = '/features/statusApi' element = { <Features /> } />
-                  <Route exact path = '/features/cancelApi' element = { <Features /> } />
-                  <Route exact path = '/apiDetails' element = { <APIDetails /> } />
+                  <Route exact path = '/apiDetails/startApi' element = { <APIDetails /> } />
+                  <Route exact path = '/apiDetails/statusApi' element = { <APIDetails /> } />
+                  <Route exact path = '/apiDetails/cancelApi' element = { <APIDetails /> } />
                 </Routes>
               </div>
             </div>
