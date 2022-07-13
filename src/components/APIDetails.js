@@ -135,7 +135,7 @@ const APIDetails = () => {
                             // rendering only if there is data in webData else loading screen is shown
                             webData
                             ?
-                            <div className = 'titleTop'>
+                            <section className = 'titleTop'>
                                 <div>
                                     <h4>{ webData.tableTitle }</h4>
                                     <div className = 'dataGrid' style = {{ width: "100%" }}>
@@ -167,8 +167,57 @@ const APIDetails = () => {
                                             }
                                         </table>
                                     </div>
+                                    :
+                                    <Loading />
                                 </div>
-                            </div>
+                            </section>
+                            :
+                            null
+                        }
+                        {
+                            last === 'startApi'
+                            ?
+                            <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 0 0 350px" }}>
+                                <div>
+                                    <ReactMarkdown className = 'markdown' children = { startApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                    <div className = 'url'>
+                                        <div className = 'ib'>/startApi</div>
+                                    </div>
+                                    <CurlReq />
+                                </div>
+                                <RightInPageNavi />
+                            </section>
+                            :
+                            null
+                        }
+                        {
+                            last === 'statusApi'
+                            ?
+                            <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 0 0 350px" }}>
+                                <div>
+                                    <ReactMarkdown className = 'markdown' children = { statusApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                    <div className = 'url'>
+                                        <div className = 'ib'>/statusApi</div>
+                                    </div>
+                                    <CurlReq />
+                                </div>
+                                <RightInPageNavi />
+                            </section>
+                            :
+                            null
+                        }
+                        {
+                            last === 'cancelApi'
+                            ?
+                            <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 0 0 350px" }}>
+                                <div>
+                                    <ReactMarkdown className = 'markdown' children = { cancelApiData } remarkPlugins ={ [remarkGfm] } rehypePlugins = { [rehypeRaw] } />
+                                    <div className = 'url'>
+                                         <div className = 'ib'>/cancelApi</div>
+                                     </div>
+                                     <CurlReq />
+                                </div>
+                            </section>
                             :
                             <Loading />
                         }

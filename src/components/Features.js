@@ -31,6 +31,14 @@ const Features = () => {
         // eslint-disable-next-line
     }, []);
 
+    function RouterLink(props) {
+        return (
+          props.href.match(/^(https?:)?\/\//)
+            ? <a href={props.href}>{props.children}</a>
+            : <Link to={props.href}>{props.children}</Link>
+        );
+    }
+
     // getting the last segment from the url
     const segments = document.URL.split('/');
     const last = segments.pop() || segments.pop();
