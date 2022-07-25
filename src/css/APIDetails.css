@@ -46,3 +46,39 @@ td {
 .datatype {
     width: 300px;
 }
+
+.maincurl {
+    display: flex;
+}
+
+.urlCurlSec {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+.att {
+    font-weight: 900;
+    /* color: #E77; */
+}
+
+.dt {
+    margin: 8px 3px;
+}
+
+.descrip p {
+    margin: 0;
+    padding: 0;
+}
+
+.Desc {
+    width: 490px;
+}
+
+.samReqRes {
+    width: 100%;
+}
+
+.samReq {
+    width: 454px;
+}

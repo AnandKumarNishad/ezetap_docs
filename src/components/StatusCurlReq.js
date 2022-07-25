@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ReactJson from 'react-json-view';
-import '../css/curlReq.css';
+import '../css/statusCurlReq.css';
 import '../css/orangeStartTheme.css';
+import ReactJson from 'react-json-view';
 
-const CurlReq = () => {
+const StatusCurlReq = () => {
 
     const [ webData, setWebData ] = useState(); 
     const [toggle, setToggle] = useState('1');
@@ -16,24 +16,9 @@ const CurlReq = () => {
     
     // getting the data from the api
     const getData = async () => {
-        if(last === 'startApi') {
-            const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/startcurl")
-            .catch((error) => {
-                console.log(error.message);
-            });
-            data = result.data;
-        }
 
         if(last === 'statusApi') {
             const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/statuscurl")
-            .catch((error) => {
-                console.log(error.message);
-            });
-            data = result.data;
-        }
-
-        if(last === 'cancelApi') {
-            const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/cancelcurl")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -58,15 +43,15 @@ const CurlReq = () => {
 
     return (
         <section id = "curl">
-            <div className = 'main-container'>
-                <aside className = 'main-box'>
-                    <pre className = 'codeblock has-label'>
-                        <div className = 'code-labels bloc-tabs'>
+            <div className = 'main-container1'>
+                <aside className = 'stmain-box'>
+                    <pre className = 'codeblock1 has-label1'>
+                        <div className = 'code-labels1 bloc-tabs1'>
                             {
                                 webData
                                 ?
                                 webData.curldata.buttons.map(btn => (
-                                    <button key = { btn.text } className = { toggle === btn.index ? 'tabs active-tab' : 'tabs' } onClick = { () => toggleTab(btn.index) }>
+                                    <button key = { btn.text } className = { toggle === btn.index ? 'tabs1 active-tab1' : 'tabs1' } onClick = { () => toggleTab(btn.index) }>
                                         { btn.text }
                                     </button>
                                 ))
@@ -75,13 +60,13 @@ const CurlReq = () => {
                             }
                         </div>
 
-                        <div className = 'code-container content-tabs'>
-                            <button className = 'copy-btn'>Copy</button>
+                        <div className = 'code-container1 content-tabs1'>
+                            <button className = 'copy-btn1'>Copy</button>
                             {
                                 webData
                                 ?
                                 webData.curldata.code.map(codeblock => (
-                                   <code key = { codeblock.language } className = { toggle === codeblock.index ? 'content active-content' : 'content' }>
+                                   <code key = { codeblock.language } className = { toggle === codeblock.index ? 'content1 active-content1' : 'content1' }>
                                         { codeblock.language }
                                         <div dangerouslySetInnerHTML = {{ __html: codeblock.html }}></div>
                                         <ReactJson src = { codeblock.json } name = { false } displayDataTypes = { false } displayObjectSize = { false } onEdit = {false} onDelete = { false } onAdd = { false } theme = 'bespin'/>
@@ -98,4 +83,4 @@ const CurlReq = () => {
     );
 };
 
-export default CurlReq;
+export default StatusCurlReq;

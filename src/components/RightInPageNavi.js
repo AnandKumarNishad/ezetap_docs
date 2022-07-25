@@ -41,6 +41,7 @@ const RightInPageNavi = () => {
 
         const sect=(document.getElementById('main'));
         const sect1=(document.getElementById('parameter'));
+        const sect4=(document.getElementById('resparam'));
         const sect2=(document.getElementById('sampleReqRes'));
         const sect3=(document.getElementById('curl'));
         
@@ -50,15 +51,15 @@ const RightInPageNavi = () => {
         } else if (e.target.id === 'parameter') {
             sect1.scrollIntoView();
             window.scrollBy(0, -84)
-            toggleSubTab()
+        } else if (e.target.id === 'resparam') {
+            sect4.scrollIntoView();
+            window.scrollBy(0, -84)
         } else if (e.target.id === 'sampleReqRes') {
             sect2.scrollIntoView();
-            window.scrollBy(0, 0)
-            toggleSubTab()
+            window.scrollBy(0, -74)
         } else if (e.target.id === 'curl') {
             sect3.scrollIntoView();
             window.scrollBy(0, 0)
-            toggleSubTab()
         }
     } 
     

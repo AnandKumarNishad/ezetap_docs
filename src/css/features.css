@@ -57,10 +57,28 @@ p img {
 }
 
 .markdown {
+    text-align: justify;
+    text-justify: inter-word;
     width: 951px;
     padding-right: 50px;
 }
 
 #pushToPay img {
-    border: 2px solid #E77A2B;
+    margin-bottom: 25px;
+    /* border: 2px solid #E77A2B; */
+}
+
+.stmark {
+    width: 753px;
+}
+
+.use {
+    margin: 0;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    opacity: 50%;
+    background-color: #E77A2B;
 }

@@ -97,6 +97,17 @@ td {
 }
 
 
+/* curl req. get part for status api*/
+.url1 {
+    color: #4f5c5d;
+}
+
+.url1::before {
+    background: #E77A2B;
+    color: #fff;
+}
+
+
 /* heading for api (GET /api) */
 .ib {
     background: rgba(108,159,255,0.1);
@@ -132,6 +143,36 @@ code span {
     color: #E77A2B;
 }
 
+/* status api curl section */
+.codeblock1 .code-labels1 {
+    background: #2d2d2d;
+}
+
+.codeblock1 .code-labels1 label{
+    color: #ffffff;
+}
+
+.code-container1 {
+    background: #2d2d2d;
+    border: 1px solid #2d2d2d;
+}
+
+.copy-btn1 {
+    background: #2d2d2d;
+    color: #E77A2B;
+}
+
+code {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+code span {
+    color: #E77A2B;
+}
+
+.content1 {
+    background-color: #4f4f4f7a;
+}
 
 /* tabs for language */
 .tabs {
@@ -152,6 +193,29 @@ code span {
 }
 
 .content hr {
+    background: #222;
+}
+
+
+/* tabs for language in status API*/
+.tabs1 {
+    color: white;
+    background: #2d2d2d;
+}
+
+.active-tab1 {
+    color: #E77A2B;
+    font-weight: 800;
+}
+
+
+/* for active tab borders */
+.active-tab1::before,
+.active-tab1::after {
+    background: #E77A2B;
+}
+
+.content1 hr {
     background: #222;
 }
 
@@ -327,8 +391,31 @@ td {
 }
 
 .main,
-.parameter,
+.rparameter,
+.resparam,
 .sampleReqRes,
 .curl {
     color: #2d2d2d;
+}
+
+
+/* status table */
+.att {
+    color: #E77A2B;
+}
+
+.dt {
+    color: #2d2d2da7;
+}
+
+.descrip p {
+    color: #2D2D2Da7
+}
+
+.refer {
+    color: rgb(251, 105, 0);
+}
+
+#pushToPay img {
+    border: 2px solid #E77A2B;
 }
