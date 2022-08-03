@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../css/APIDetails.css'
 import '../css/orangeStartTheme.css';
-import '../css/statusCurlReq.css';
 import "../css/rightInPageNavi.css";
+import '../css/statusCurlReq.css';
 import axios from 'axios';
 import Loading from "../components/Loading";
 import remarkGfm from 'remark-gfm'
@@ -22,16 +22,16 @@ const APIDetails = () => {
     let cancelData;
 
     // getting the features md file data from the api
-
     const getData = async () => {
-        const res = await axios.get("http://localhost:1337/api/webdatas")
+        const result = await axios.get("http://localhost:1337/api/webdatas")
         .catch((error) => {
             console.log(error.message);
         });
-        data = res.data.data[0].attributes.data.data;
+        data = result.data;
         if(data !== undefined)
         {
-            setWebData(data);
+            // assigning it to data in useState
+            setWebData(data.data[0].attributes.data.data);
         }
     }
 
@@ -95,7 +95,7 @@ const APIDetails = () => {
                 ?
                 <main>
                     {
-                        last === 'startApi'
+                        last === 'createApi'
                         ?
                         <section className = 'startapi' id = 'startapi' style = {{ padding: "0px 0 0 315px" }}>
                             <div className = 'maincurl'>
@@ -112,7 +112,7 @@ const APIDetails = () => {
                         null
                     }
                     {
-                        last === 'statusApi'
+                        last === 'updateApi'
                         ?
                         <section className = 'statusapi' id = 'statusapi' style = {{ padding: "0px 0 0 315px" }}>
                             <div className = 'maincurl'>
@@ -129,7 +129,7 @@ const APIDetails = () => {
                         null
                     }
                     {
-                        last === 'cancelApi'
+                        last === 'fetchApi'
                         ?
                         <section className = 'cancelapi' id = 'cancelapi' style = {{ padding: "0px 0 0 315px" }}>
                             <div className = 'maincurl'>

@@ -46,7 +46,6 @@ td {
 /* card front */
 .flip-card-front {
     background-image: linear-gradient(-53deg, #f9d2447d 20%, #f0961957 80%);
-    /* background-color: #F9D344; */
     color: #2D2D2D;
     box-shadow: 0px 3px 16px #0000001f;
 }
@@ -59,7 +58,6 @@ td {
 /* cards back */
 .flip-card-back {
     background-image: linear-gradient(-53deg, #f0961964 20%, #e1472f46 80%);
-    /* background-color: #ff62006b; */
     color: #2D2D2D;
     box-shadow: 0px 3px 86px #00000014;
 }
@@ -220,6 +218,20 @@ code span {
 }
 
 
+/* colors for scroll bar in curl code block */
+div::-webkit-scrollbar-track {
+    background: #2D2D2D;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #E77A2B;
+}
+
+div::-webkit-scrollbar-corner {
+    background-color: #2D2D2D;
+}
+
+
 /* features */
 /* headings (H1, H2, H3, H4, H5, H6) */
 h1,
@@ -236,7 +248,6 @@ strong {
 
 /* NOTE */
 blockquote {
-    /* max-width: fit-content; */
     padding: 1px 6px;
     background-color: #ffc78c;
     border-left: 4px solid #E77A2B;
@@ -251,7 +262,7 @@ tr th {
 }
 
 td {
-    background-color: #f7ede284;
+    background-color: #ffffff;
 }
 
 
@@ -287,7 +298,7 @@ td {
 /* split NavBar */
 .secondNav {
     border-right: 2px solid #E77A2B;
-    background-color: #f7ede2;
+    background-color: #ffffff;
 }
 
 .navTab a span {

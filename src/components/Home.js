@@ -9,17 +9,15 @@ const Home = () => {
     const [ webData, setWebData ] = useState(); 
     
     let data;
-    
-    // getting the data from the api
+
     const getData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
+        const res = await axios.get("http://localhost:1337/api/webdatas")
         .catch((error) => {
             console.log(error.message);
         });
-        data = result.data;
+        data = res.data.data[0].attributes.data.data;
         if(data !== undefined)
         {
-            // assigning it to webData in useState
             setWebData(data);
         }
     }

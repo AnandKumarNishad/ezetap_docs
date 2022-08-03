@@ -25,12 +25,10 @@
 
 .mainDiv {
     height: 64px;
-    /* background-color: #2D2D2D; */
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
     padding: 0 60px;
-    /* border: 1px solid #2D2D2D; */
 }
 
 .logoDiv {
@@ -94,12 +92,10 @@
 
 .active a p {
     cursor: pointer;
-    /* color: #E77A2B; */
 }
 
 .linkDiv a p {
     cursor: pointer;
-    /* color: #ffffff; */
 }
 
 .buttonDiv {
@@ -109,20 +105,16 @@
 
 .buttonDiv a p {
     cursor: pointer;
-    /* color: #E77A2B; */
 }
 
 .buttonDiv a button {
-    /* background-color: #E77A2B; */
     box-shadow: none;
-    /* border: 1px solid #E77A2B; */
     cursor: pointer;
     margin-top: 8px;
     border-radius: 4px;
 }
 
 .buttonDiv a button p {
-    /* color: #fff; */
     font-size: 14px;
     font-weight: 400;
     cursor: pointer;
@@ -131,7 +123,6 @@
 }
 
 .searchbar {
-    /* background: rgb(255, 255, 255); */
     margin: 0;
     outline: none;
     display: flex;
@@ -144,12 +135,10 @@
     z-index: 2;
     max-width: 450px;
     border-radius: 4px;
-    /* border: 1px solid rgb(197, 204, 216); */
 }
 
 .searchbar input {
     border-radius: 4px;
-    /* background-color: white; */
     border: none;
     padding: 12px 48px;
     margin: 0;
@@ -157,10 +146,6 @@
     position: relative;
     z-index: 4;
 }
-
-/* .searchbar input:disabled {
-    color: rgb(84, 84, 84);
-} */
 
 .searchbar img {
     position: absolute;

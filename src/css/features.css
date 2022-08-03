@@ -15,39 +15,22 @@ th {
 
 h1 {
     font-size: 35px;
-    /* color: #E77A2B; */
-    /* font-style: italic; */
     text-decoration: underline;
 }
 
 h2 {
     font-size: 25px;
-    /* color: #E77A2B; */
     text-decoration: underline;
 }
 
 h4 {
     font-size: 20px;
-    /* color: #EEA428; */
 }
 
 p img {
     width:951px;
     height: 450px;
 }
-
-/* li::marker {
-    color: #E77A2B;
-} */
-
-/* tr th {
-    background-color: #E77A2B;
-    color: white;
-} */
-
-/* strong {
-    color:#E77A2B;
-} */
 
 .cancelapi,
 .statusapi,
@@ -65,7 +48,6 @@ p img {
 
 #pushToPay img {
     margin-bottom: 25px;
-    /* border: 2px solid #E77A2B; */
 }
 
 .stmark {

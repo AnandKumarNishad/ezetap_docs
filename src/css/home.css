@@ -20,7 +20,6 @@
 .bgImageDiv {
     overflow: hidden;
     display: flex;
-    /* background-image: url('../../public/images/topBannerBackground.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -37,7 +36,6 @@
 }
 
 .heading {
-    /* color: #2D2D2D; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -56,8 +54,6 @@
     font-weight: 700;
     padding-bottom: 30px;
     cursor: default;
-    /* font-style: italic; */
-    /* color: #2D2D2D; */
     text-decoration: none;
 }
 
@@ -83,7 +79,6 @@
 
 .bottomTitleText h3 {
     text-align: start;
-    /* color: #2D2D2D; */
     margin: 0;
     padding: 0;
     font-size: 30px;

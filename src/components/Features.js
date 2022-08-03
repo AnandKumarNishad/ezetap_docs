@@ -14,11 +14,11 @@ const Features = () => {
 
     // getting the features md file data from the api
     const getData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com/featuresmd")
+        const result = await axios.get("http://localhost:1337/api/api-details")
         .catch((error) => {
             console.log(error.message);
         });
-        data = result.data;
+        data = result.data.data[0].attributes.ApiDetails;
         if(data !== undefined)
         {
             // assigning it to data in useState

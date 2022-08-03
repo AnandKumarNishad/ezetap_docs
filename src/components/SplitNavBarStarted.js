@@ -1,23 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import useCollapse from 'react-collapsed';
+import Collapsible from 'react-collapsible';
 import { Link, NavLink } from 'react-router-dom';
 import '../css/splitnavbarStarted.css';
 
 const SplitNavBarStarted = () => {
     const [ webData, setWebData ] = useState(); 
-    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
     
     let pageName = "";
     let data;
 
     // getting the data from the api
     const getData = async () => {
-        const result = await axios.get("https://ezetap-docs-project-api.herokuapp.com")
+        const result = await axios.get("http://localhost:1337/api/webdatas")
         .catch((error) => {
             console.log(error.message);
         });
-        data = result.data;
+        data = result.data.data[0].attributes.data.data;
         if(data !== undefined)
         {
             // assigning it to webData in useState
@@ -40,42 +39,6 @@ const SplitNavBarStarted = () => {
     } else {
         pageName = 'home'
     }
-
-    // setting the active css class to the active link
-    // const activeLink = () => {
-    //     let ptp = document.querySelector("#ptp");
-    //     let startapi = document.querySelector("#start");
-    //     let statusapi = document.querySelector("#status");
-    //     let cancelapi = document.querySelector("#cancel");
-
-    //     if(startapi !== null && statusapi !== null && cancelapi !== null)
-    //     {
-    //         if( document.URL.includes("startApi")) {
-    //             startapi.classList.add("activeapiname");
-    //             ptp.classList.remove("activeapiname");
-    //             cancelapi.classList.remove("activeapiname");
-    //             statusapi.classList.remove("activeapiname");
-    //             ptp.classList.add("secactive");
-    //         } else if ( document.URL.includes("statusApi")) {
-    //             cancelapi.classList.remove("activeapiname");
-    //             startapi.classList.remove("activeapiname");
-    //             ptp.classList.remove("activeapiname");
-    //             ptp.classList.add("secactive");
-    //             statusapi.classList.add("activeapiname");
-    //         } else if ( document.URL.includes("cancelApi")) {
-    //             startapi.classList.remove("activeapiname");
-    //             statusapi.classList.remove("activeapiname");
-    //             ptp.classList.remove("activeapiname");
-    //             ptp.classList.add("secactive");
-    //             cancelapi.classList.add("activeapiname");
-    //         } else{
-    //             startapi.classList.remove("activeapiname");
-    //             statusapi.classList.remove("activeapiname");
-    //             cancelapi.classList.remove("activeapiname");
-    //             ptp.classList.add('activeapiname');
-    //         }
-    //     }
-    // }
 
     return (
         // as home page has no split nav bar so not rendering the splitbar
@@ -142,91 +105,41 @@ const SplitNavBarStarted = () => {
                                 // if the page is API details started then we render this section
                                 pageName === 'api'
                                 ?
-                                // <>
-                                //     {/* main link */}
-                                //     <div className = 'innerMain'>
-                                //         <div className = 'navTab'>
-                                //             {
-                                //                 webData.splitNav[0].API.mainTab.map(title => (
-                                //                     <Link to = '/apiDetails/startApi' key = { title.title }>
-                                //                         <span>{ title.title }</span>
-                                //                     </Link>
-                                //                 ))
-                                //             }
-                                //         </div>
-                                //     </div>
-
-                                //     {/* sublinks */}
-                                //     <div className = 'navCell'>
-                                //         <div className = 'navInnerCell'>
-                                //             <div className = 'navBtn'>
-                                //                 <div className = 'navTab'>
-                                //                     <Link to = { webData.splitNav[0].API.SecTab.route } >
-                                //                         <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                //                         <p id = "ptp" className = 'activeapiname'>{ webData.splitNav[0].API.SecTab.first }</p>
-                                //                     </Link>
-                                //                 </div>
-                                //                 <div className = 'apiNames'>
-                                //                     <ul>
-                                //                         {
-                                //                             webData.splitNav[0].API.secTabList.map(li => (
-                                //                                 <Link to = { li.route } key = { li.li } >
-                                //                                     <li className = {li.class} id = {li.id}> { li.li } </li>
-                                //                                 </Link>
-                                //                             ))
-                                //                         }
-                                //                     </ul>
-                                //                 </div>
-                                //                 {/* <div className = 'navTab'>
-                                //                     <Link to = '/apiDetails' >
-                                //                         <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                //                         <p id = "ptp" className = 'activeapiname'>Pull to Pay</p>
-                                //                     </Link>
-                                //                 </div>
-
-                                //                 <div className = 'navTab'>
-                                //                     <Link to = '/apiDetails' >
-                                //                         <img src = { webData.splitNav[0].API.arrowImg } alt = { webData.splitNav[0].API.arrImgAlt }></img>
-                                //                         <p id = "ptp" className = 'activeapiname'>Tap to Pay</p>
-                                //                     </Link>
-                                //                 </div> */}
-                                //             </div>
-                                //         </div>
-                                //     </div>
-                                //     { activeLink() }
-                                // </>
-                                    webData
-                                    ?
-                                    <div>
-                                        <div className = 'headUl'>
-                                            <ul className = 'mainUl'>
-                                                {
-                                                    webData.splitNav[0].API.map(heading => (
-                                                        <li key = { heading.title }>
+                                webData
+                                ?
+                                <div>
+                                    <div className = 'headUl'>
+                                        <ul className = 'mainUl'>
+                                            {
+                                                webData.splitNav[0].API.map(heading => (
+                                                    <li key = { heading.title }>
+                                                        <div>
                                                             <div>
-                                                                <div>
-                                                                    <NavLink to = { webData.splitNav[0].API[0].SecTab[0].route } className = {({ isActive }) => isActive ? "activeheadlink headlink" : "activeheadlink headlink" }>
-                                                                        <p>{ heading.title }</p>
-                                                                    </NavLink>
-                                                                </div>
+                                                                <NavLink to = { webData.splitNav[0].API[0].SecTab[0].route } className = {({ isActive }) => isActive ? "activeheadlink headlink" : "activeheadlink headlink" }>
+                                                                    <p>{ heading.title }</p>
+                                                                </NavLink>
                                                             </div>
-                                                            <ul className = 'subUl'>
-                                                                {
-                                                                   heading.SecTab.map(sechead => (
-                                                                    <li key = { sechead.first } id = { sechead.headid }>
-                                                                        <div className = 'collapsible'>
-                                                                            <div className = 'header' {...getToggleProps()}>
-                                                                                <NavLink to = { sechead.route } className = {({ isActive }) => isActive ? "activesublink sublink" : "activesublink sublink"}>
-                                                                                    { isExpanded ? <img src = '/images/downarrow.svg'></img> : <img src = { heading.arrowImg } alt = { heading.arrImgAlt }></img> }
+                                                        </div>
+                                                        <ul className = 'subUl'>
+                                                            {
+                                                                heading.SecTab.map(sechead => (
+                                                                <li key = { sechead.first } id = { sechead.headid }>
+                                                                    {
+                                                                        sechead.headid === 'p2p'
+                                                                        ?
+                                                                        <div>
+                                                                        <Collapsible trigger = { 
+                                                                            <div>
+                                                                                <div className = "activesublink sublink">
+                                                                                    { <img src = { heading.arrowImg } alt = { heading.arrImgAlt }></img> }
                                                                                     <p>{ sechead.first }</p>
-                                                                                </NavLink>
+                                                                                </div>
                                                                             </div>
-                                                                            <ul className = 'subsubUl'  {...getCollapseProps()}>
+                                                                        } open>
+                                                                            <ul className = 'subsubUl'>
                                                                                 {
-                                                                                    isExpanded
-                                                                                    ? 
                                                                                     sechead.secTabList.map(apilist =>(
-                                                                                        <li key = { apilist.li }>
+                                                                                        <li key = { apilist.id }>
                                                                                             <div>
                                                                                                 <div className = 'conten'>
                                                                                                     <NavLink to =  { apilist.route } className = {({ isActive }) => isActive ? "activesubsublink subsublink" : "subsublink"}>
@@ -236,26 +149,81 @@ const SplitNavBarStarted = () => {
                                                                                             </div>
                                                                                         </li>
                                                                                     ))
-                                                                                    :
-                                                                                    null
                                                                                 }
                                                                             </ul>
+                                                                        </Collapsible>
+                                                                    </div>
+                                                                    :
+                                                                    sechead.headid === 'error'
+                                                                        ?
+                                                                        <div>
+                                                                            <Collapsible trigger = { 
+                                                                                <div>
+                                                                                    <NavLink to = { sechead.route } className = {({ isActive }) => isActive ? "activesublink sublink":  "activesublink sublink"}>
+                                                                                        { <img src = { heading.arrowImg } alt = { heading.arrImgAlt }></img> }
+                                                                                        <p>{ sechead.first }</p>
+                                                                                    </NavLink>
+                                                                                </div>
+                                                                            }>
+                                                                                <ul className = 'subsubUl'>
+                                                                                    {
+                                                                                        sechead.secTabList.map(apilist =>(
+                                                                                            <li key = { apilist.id }>
+                                                                                                <div>
+                                                                                                    <div className = 'conten'>
+                                                                                                        <NavLink to =  { apilist.route } className = {({ isActive }) => isActive ? "activesubsublink subsublink" : "subsublink"}>
+                                                                                                            <p>{ apilist.li }</p>
+                                                                                                        </NavLink>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        ))
+                                                                                    }
+                                                                                </ul>
+                                                                            </Collapsible>
                                                                         </div>
-                                                                    </li>
-                                                                    )) 
-                                                                }
-                                                            </ul>
-                                                        </li>
-                                                    ))
-                                                }
-                                            </ul>
-                                        </div>
-                                        {/* { activeLink() } */}
+                                                                        :
+                                                                        <div>
+                                                                            <Collapsible trigger = { 
+                                                                                <div>
+                                                                                    <div className = "activesublink sublink">
+                                                                                        { <img src = { heading.arrowImg } alt = { heading.arrImgAlt }></img> }
+                                                                                        <p>{ sechead.first }</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            }>
+                                                                                <ul className = 'subsubUl'>
+                                                                                    {
+                                                                                        sechead.secTabList.map(apilist =>(
+                                                                                            <li key = { apilist.id }>
+                                                                                                <div>
+                                                                                                    <div className = 'conten'>
+                                                                                                        <NavLink to =  { apilist.route } className = {({ isActive }) => isActive ? "activesubsublink subsublink" : "subsublink"}>
+                                                                                                            <p>{ apilist.li }</p>
+                                                                                                        </NavLink>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        ))
+                                                                                    }
+                                                                                </ul>
+                                                                            </Collapsible>
+                                                                        </div>
+                                                                    }
+                                                                </li>
+                                                                )) 
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
                                     </div>
-                                    :
-                                    null
+                                </div>
                                 :
                                 null
+                            :
+                            null
                             }
                             {
                                 // if the page is features then we render this section
