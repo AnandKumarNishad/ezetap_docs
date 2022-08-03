@@ -22,7 +22,6 @@ const CurlReq = () => {
                 console.log(error.message);
             });
             data = result.data.data[0].attributes.startCurlRequest;
-            console.log(result.data);
         }
 
         if(last === 'statusApi') {
