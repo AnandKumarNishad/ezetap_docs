@@ -17,15 +17,16 @@ const CurlReq = () => {
     // getting the data from the api
     const getData = async () => {
         if(last === 'startApi') {
-            const result = await axios.get("http://localhost:1337/api/start-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
             data = result.data.data[0].attributes.startCurlRequest;
+            console.log(result.data);
         }
 
         if(last === 'statusApi') {
-            const result = await axios.get("http://localhost:1337/api/status-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -33,7 +34,7 @@ const CurlReq = () => {
         }
 
         if(last === 'cancelApi') {
-            const result = await axios.get("http://localhost:1337/api/cancel-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -41,7 +42,7 @@ const CurlReq = () => {
         }
 
         if(last === 'createApi' && document.URL.includes("useragreement")) {
-            const result = await axios.get("http://localhost:1337/api/start-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -49,7 +50,7 @@ const CurlReq = () => {
         }
 
         if(last === 'updateApi' && document.URL.includes("useragreement")) {
-            const result = await axios.get("http://localhost:1337/api/status-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -57,7 +58,7 @@ const CurlReq = () => {
         }
 
         if(last === 'fetchApi' && document.URL.includes("useragreement")) {
-            const result = await axios.get("http://localhost:1337/api/cancel-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -65,7 +66,7 @@ const CurlReq = () => {
         }
 
         if(last === 'createApi' && document.URL.includes("userconsent")) {
-            const result = await axios.get("http://localhost:1337/api/start-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -73,7 +74,7 @@ const CurlReq = () => {
         }
 
         if(last === 'updateApi' && document.URL.includes("userconsent")) {
-            const result = await axios.get("http://localhost:1337/api/status-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });
@@ -81,7 +82,7 @@ const CurlReq = () => {
         }
 
         if(last === 'fetchApi' && document.URL.includes("userconsent")) {
-            const result = await axios.get("http://localhost:1337/api/cancel-curl-requests")
+            const result = await axios.get("http://localhost:1337/api/codelayouts")
             .catch((error) => {
                 console.log(error.message);
             });

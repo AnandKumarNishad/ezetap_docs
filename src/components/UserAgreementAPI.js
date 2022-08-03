@@ -37,7 +37,7 @@ const APIDetails = () => {
 
     // getting the start Api md file data from the api
     const getStartApiData = async () => {
-        const result = await axios.get("http://localhost:1337/api/start-apis")
+        const result = await axios.get("http://localhost:1337/api/api-details")
         .catch((error) => {
             console.log(error.message);
         });
@@ -51,11 +51,11 @@ const APIDetails = () => {
 
     // getting the start Api md file data from the api
     const getStatusApiData = async () => {
-        const result = await axios.get("http://localhost:1337/api/status-apis")
+        const result = await axios.get("http://localhost:1337/api/api-details")
         .catch((error) => {
             console.log(error.message);
         });
-        statusData = result.data.data[0].attributes.statusAPI;
+        statusData = result.data.data[0].attributes.statusApi;
         if(statusData !== undefined)
         {
             // assigning it to statusData in useState
@@ -65,11 +65,11 @@ const APIDetails = () => {
 
     // getting the start Api md file data from the api
     const getCancelApiData = async () => {
-        const result = await axios.get("http://localhost:1337/api/cancel-apis")
+        const result = await axios.get("http://localhost:1337/api/api-details")
         .catch((error) => {
             console.log(error.message);
         });
-        cancelData = result.data.data[0].attributes.cancelAPI;
+        cancelData = result.data.data[0].attributes.cancelApi;
         if(cancelData !== undefined)
         {
             // assigning it to cancelData in useState
