@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/APIDetails.css'
 import '../css/orangeStartTheme.css';
 import '../css/statusCurlReq.css';
-import "../css/rightInPageNavi.css";
+// import "../css/rightInPageNavi.css";
 import axios from 'axios';
 import Loading from "../components/Loading";
 import remarkGfm from 'remark-gfm'

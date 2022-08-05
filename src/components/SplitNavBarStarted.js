@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Collapsible from 'react-collapsible';
 import { Link, NavLink } from 'react-router-dom';
 import '../css/splitnavbarStarted.css';
+import "../css/rightInPageNavi.css";    
+
 
 const SplitNavBarStarted = () => {
     const [ webData, setWebData ] = useState(); 
